@@ -1,8 +1,6 @@
 package be.thomasmore.appartementverhuur.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -12,15 +10,15 @@ public class Appartement {
 //    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private int capacity;
-    private String name;
+    private String appartementNaam;
 
 
     public Appartement() {
     }
 
-    public Appartement(Integer id, String name, int capacity) {
+    public Appartement(Integer id, String appartementNaam, int capacity) {
         this.id = id;
-        this.name = name;
+        this.appartementNaam = appartementNaam;
         this.capacity = capacity;
     }
 
@@ -32,12 +30,12 @@ public class Appartement {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getAppartementNaam() {
+        return appartementNaam;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAppartementNaam(String name) {
+        this.appartementNaam = name;
     }
 
     public int getCapacity() {
