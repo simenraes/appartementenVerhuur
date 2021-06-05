@@ -10,7 +10,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.validation.Valid;
+//import javax.validation.Valid;
 
 public class AdminController {
     @Autowired
@@ -26,15 +26,15 @@ public class AdminController {
         return "admin/appartementnew";
     }
 
-    @PostMapping("/appartementnew")
-    public String createTable(@Valid Appartement appartement,
-                              Errors errors, Model model) {
-        if (errors.hasErrors()) {
-            model.addAttribute("appartementen", appartementRepository.findAll());
-            return "admin/appartementnew";
-        } else {
-            appartementRepository.save(appartement);
-            return "redirect:/"; // niet zeker
-        }
-    }
+//    @PostMapping("/appartementnew")
+//    public String createTable(@Valid Appartement appartement,
+//                              Errors errors, Model model) {
+//        if (errors.hasErrors()) {
+//            model.addAttribute("appartementen", appartementRepository.findAll());
+//            return "admin/appartementnew";
+//        } else {
+//            appartementRepository.save(appartement);
+//            return "redirect:/"; // niet zeker
+//        }
+//    }
 }
