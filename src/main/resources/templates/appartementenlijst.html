@@ -22,6 +22,17 @@
     </tbody>
 </table>
 
+<div class="venuelist">
+    <div th:each="appartement:${appartementen}">
+        <a class="buttonLook mediumButton"
+           th:href="@{|/appartementendetails/${appartement.id}|}">
+            <span th:text="${appartement.appartementNaam}">appartement naam</span>
+            <div th:text="|capacity ${appartement.capacity}|" class="venueExtraInfo">maxNrOfPersons</div>
+        </a>
+
+    </div>
+</div>
+
 
 </body>
 </html>

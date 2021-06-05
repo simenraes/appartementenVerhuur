@@ -20,10 +20,10 @@ public class HomeController {
         return "home";
     }
 
-   @GetMapping("/appartementdetails/{appartementNaam}")
+   @GetMapping({"/appartementdetails","/appartementdetails/{appartementNaam}"})
     public String details(Model model,
-                          @PathVariable String appartementNaam){
-        model.addAttribute("appartementNaam", appartementNaam);
+                          @PathVariable(required = false) String appartementNaam){
+        model.addAttribute("appartementNaam", (appartementNaam!=null) ? appartementNaam : "geen appartement gekozen");
         return "appartementdetails";
    }
 
