@@ -6,26 +6,13 @@
     <title>Title</title>
 </head>
 <body>
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Capacity</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="a: ${appartementen}">
-        <td th:text="${a.id}">1</td>
-        <td th:text="${a.appartementNaam}">Fabulous</td>
-        <td th:text="${a.capacity}">4</td>
-    </tr>
-    </tbody>
-</table>
+<div th:text="|${nrOfAppartementen} appartementen gevonden|">10 appartementen</div>
+
 
 <div class="venuelist">
     <div th:each="appartement:${appartementen}">
         <a class="buttonLook mediumButton"
-           th:href="@{|/appartementendetails/${appartement.id}|}">
+           th:href="@{|/appartementdetails/${appartement.id}|}">
             <span th:text="${appartement.appartementNaam}">appartement naam</span>
             <div th:text="|capacity ${appartement.capacity}|" class="venueExtraInfo">maxNrOfPersons</div>
         </a>
