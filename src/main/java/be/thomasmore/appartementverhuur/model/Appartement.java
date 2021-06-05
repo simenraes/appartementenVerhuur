@@ -14,13 +14,16 @@ public class Appartement {
     private boolean isParkingBeschikbaar;
     private int afstandTotCentrum;
     private String extraInfo;
+    private int aantalSlaapkamers;
+    private int oppervlakte;
+    private boolean huisdierenToegelaten;
     private int prijsPerMaand;
 
 
     public Appartement() {
     }
 
-    public Appartement(Integer id, int capacity, String appartementNaam, String stad, boolean isParkingBeschikbaar, int afstandTotCentrum, String extraInfo, int prijsPerMaand) {
+    public Appartement(Integer id, int capacity, String appartementNaam, String stad, boolean isParkingBeschikbaar, int afstandTotCentrum, String extraInfo, int aantalSlaapkamers, int oppervlakte, boolean huisdierenToegelaten, int prijsPerMaand) {
         this.id = id;
         this.capacity = capacity;
         this.appartementNaam = appartementNaam;
@@ -28,6 +31,9 @@ public class Appartement {
         this.isParkingBeschikbaar = isParkingBeschikbaar;
         this.afstandTotCentrum = afstandTotCentrum;
         this.extraInfo = extraInfo;
+        this.aantalSlaapkamers = aantalSlaapkamers;
+        this.oppervlakte = oppervlakte;
+        this.huisdierenToegelaten = huisdierenToegelaten;
         this.prijsPerMaand = prijsPerMaand;
     }
 
@@ -101,6 +107,30 @@ public class Appartement {
 
     public void setPrijsPerMaand(int prijsPerMaand) {
         this.prijsPerMaand = prijsPerMaand;
+    }
+
+    public int getAantalSlaapkamers() {
+        return aantalSlaapkamers;
+    }
+
+    public void setAantalSlaapkamers(int aantalSlaapkamers) {
+        this.aantalSlaapkamers = aantalSlaapkamers;
+    }
+
+    public int getOppervlakte() {
+        return oppervlakte;
+    }
+
+    public void setOppervlakte(int oppervlakte) {
+        this.oppervlakte = oppervlakte;
+    }
+
+    public boolean isHuisdierenToegelaten() {
+        return huisdierenToegelaten;
+    }
+
+    public void setHuisdierenToegelaten(boolean huisdierenToegelaten) {
+        this.huisdierenToegelaten = huisdierenToegelaten;
     }
 }
 
