@@ -1,4 +1,4 @@
-package be.thomasmore.appartementverhuur;
+package be.thomasmore.appartementverhuur.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,5 +17,6 @@ public class HomeController {
         model.addAttribute("naam","Anonymous");
         return "home";
     }
+
 
 }
