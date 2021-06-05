@@ -6,11 +6,11 @@
 </head>
 <body>
 <div class="row1">
-    <div class="row1content">
-<!--        <h2><p th:text="${appartementNaam}">appartement</p></h2>-->
-    </div>
+<!--    <div class="row1content">-->
+<!--&lt;!&ndash;        <h2><p th:text="${appartementNaam}">appartement</p></h2>&ndash;&gt;-->
+<!--    </div>-->
 
-</div>
+
 <div class="row1content" th:if="${appartement}">
 
     <div class="prevButtonDiv">
@@ -21,6 +21,11 @@
     </div>
 </div>
 <h2 th:text="|appartement: ${appartement.appartementNaam}|">appartementdetails</h2>
+
+<div class="row1content" th:unless="${appartement.id}">
+    <p>geen appartement gekozen</p>
+</div>
+</div>
 
 
 </body>

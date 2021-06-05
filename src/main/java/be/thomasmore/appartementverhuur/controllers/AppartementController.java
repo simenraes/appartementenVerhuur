@@ -38,9 +38,10 @@ public class AppartementController {
         Optional<Appartement> optionalAppartement = appartementRepository.findById(id);
         if (optionalAppartement.isPresent()) {
             long nrOfVAppartementen = appartementRepository.count();
-            model.addAttribute("appartement", optionalAppartement.get());
+            model.addAttribute("appartement", (optionalAppartement.get()));
             model.addAttribute("prevId", id > 1 ? id - 1 : nrOfVAppartementen);
             model.addAttribute("nextId", id < nrOfVAppartementen ? id + 1 : 1);
+
 
 
         }
