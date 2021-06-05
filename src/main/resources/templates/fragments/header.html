@@ -1,0 +1,26 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../../static/css/style.css"/>
+
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="header">
+    <div class="nav" >
+        <h1>appartementenverhuur</h1>
+
+        <div class="navbuttons">
+            <a class="buttonLook menuButton" th:href="@{/}">home</a>
+            <a class="buttonLook menuButton" th:href="@{/appartementenlijst}">appartementen</a>
+
+        </div>
+    </div>
+    <div class="freespaceforheader"></div>
+</div>
+
+</body>
+</html>
