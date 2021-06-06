@@ -6,7 +6,7 @@ import javax.persistence.Id;
 @Entity
 public class Appartement {
     @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Integer id;
     private int capacity;
     private String appartementNaam;
