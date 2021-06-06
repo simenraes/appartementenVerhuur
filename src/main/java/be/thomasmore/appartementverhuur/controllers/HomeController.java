@@ -10,13 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 
-    @RequestMapping("/")
-    public String home(@RequestParam(required = false) String naam, Model model) {
-        if (naam == null || naam.equals(""))
-            naam = "Anonymous";
-        model.addAttribute("name", naam);
+    @GetMapping({"/", "/home"})
+    public String home() {
 
-        model.addAttribute("naam","Anonymous");
+
         return "home";
     }
 
