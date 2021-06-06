@@ -6,7 +6,6 @@ import javax.persistence.Id;
 @Entity
 public class Appartement {
     @Id
-
     private Integer id;
     private int capacity;
     private String appartementNaam;
