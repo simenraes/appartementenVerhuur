@@ -17,12 +17,12 @@ public class AppartementController {
     @Autowired
     private AppartementRepository appartementRepository;
 
-    public AppartementController(AppartementRepository appartementRepository) {
-        this.appartementRepository = appartementRepository;
-    }
+//    public AppartementController(AppartementRepository appartementRepository) {
+//        this.appartementRepository = appartementRepository;
+//    }
 
     @GetMapping("/appartementenlijst")
-    public String appartementenlijst(Model model) {
+    public String appartementenLijst(Model model) {
         long nrOfAppartementen = appartementRepository.count();
         Iterable<Appartement> appartementen = appartementRepository.findAll();
         model.addAttribute("appartementen", appartementen);
