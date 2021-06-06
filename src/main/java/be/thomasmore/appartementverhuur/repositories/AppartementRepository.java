@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface AppartementRepository extends CrudRepository<Appartement, Integer> {
     List<Appartement> findAllBy();
     Optional<Appartement> findById(Integer id);
+    Iterable<Appartement> findByHuisdierenToegelaten(boolean huisdierenToegelaten);
 }

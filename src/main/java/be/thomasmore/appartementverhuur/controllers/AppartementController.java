@@ -47,6 +47,13 @@ public class AppartementController {
         }
         return "appartementdetails";
     }
+   @GetMapping("/appartementenlijst/huisdierentoegelaten/yes")
+    public String appartementenlijstHuisdierenToegelatenYes(Model model){
+        Iterable<Appartement> appartementen= appartementRepository.findByHuisdierenToegelaten(true);
+        model.addAttribute("appartementen", appartementen);
+        return "appartementenlijst";
+   }
+
 }
 
 
