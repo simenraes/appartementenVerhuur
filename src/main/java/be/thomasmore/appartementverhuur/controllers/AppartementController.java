@@ -36,13 +36,14 @@ public class AppartementController {
         model.addAttribute("showFilters", false);
         return "appartementenlijst";
     }
+
     @GetMapping({"/appartementenlijst/filter"})
     public String appartementenlijstMetFilter(Model model,
                                               @RequestParam(required = false) Integer minCapacity,
-                                              @RequestParam(required = false) Integer maxCapacity,
-                                              @RequestParam(required = false) String keyword){
-        logger.info(String.format("appartementenlijstMetFilter -- min=%d, max=%d, keyword=%s", minCapacity,
-                maxCapacity, keyword));
+                                              @RequestParam(required = false) Integer maxCapacity)
+                                               {
+        logger.info(String.format("appartementenlijstMetFilter -- min=%d, max=%d", minCapacity,
+                maxCapacity));
 
 
 //        List<Appartement> appartementen= appartementRepository.findByCapacityGreaterThanEqual(minCapacity);
@@ -60,10 +61,13 @@ public class AppartementController {
             else //min==null and max==null
                 appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
 
-//        if (keyword != null)
-//            appartementen = appartementRepository.findByStadContainingIgnoreCase(keyword);
+//        if (keyword == null)
+//            appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity, keyword);
 //        else
-//            appartementen = appartementRepository.findAllBy();
+//            appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity, keyword);
+
+
+
         model.addAttribute("appartementen", appartementen);
         model.addAttribute("nrOfAppartementen", appartementen.size());
 
@@ -78,7 +82,7 @@ public class AppartementController {
 
     @GetMapping({"/appartementdetails", "/appartementdetails/{id}"})
     public String appartementDetails(Model model,
-                               @PathVariable(required = false) Integer id) {
+                                     @PathVariable(required = false) Integer id) {
         if (id == null) return "appartementdetails";
 
         Optional<Appartement> optionalAppartement = appartementRepository.findById(id);
@@ -87,7 +91,6 @@ public class AppartementController {
             model.addAttribute("appartement", (optionalAppartement.get()));
             model.addAttribute("prevId", id > 1 ? id - 1 : nrOfVAppartementen);
             model.addAttribute("nextId", id < nrOfVAppartementen ? id + 1 : 1);
-
 
 
         }
