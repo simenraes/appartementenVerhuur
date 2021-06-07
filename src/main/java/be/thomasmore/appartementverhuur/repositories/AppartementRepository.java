@@ -1,6 +1,7 @@
 package be.thomasmore.appartementverhuur.repositories;
 
 import be.thomasmore.appartementverhuur.model.Appartement;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
@@ -9,14 +10,24 @@ import java.util.Optional;
 
 public interface AppartementRepository extends CrudRepository<Appartement, Integer> {
 
-//List<Appartement>  findByCapacityGreaterThanEqual(@Param("minCapacity")Integer minCapacity);
-List<Appartement> findAllBy();
-//List<Appartement> findByCapacityGreaterThanEqual(Integer minCapacity);
+    //List<Appartement>  findByCapacityGreaterThanEqual(@Param("minCapacity")Integer minCapacity);
+    List<Appartement> findAllBy();
+
+    //List<Appartement> findByCapacityGreaterThanEqual(Integer minCapacity);
     List<Appartement> findByCapacityGreaterThan(int minCapacity);
 
-    Optional<Appartement> findById(Integer id);
+//    List<Appartement> findByCapacityBetween(int minCapacity, int maxCapacity);
 
-    Iterable<Appartement> findByHuisdierenToegelaten(boolean huisdierenToegelaten);
+    List<Appartement> findByStadContainingIgnoreCase(String keyword);
+
+    Optional<Appartement> findById(Integer id);
+    @Query("SELECT a FROM Appartement a WHERE " +
+            "(:min IS NULL OR :min <= a.capacity) AND " +
+            "(:max IS NULL OR a.capacity <= :max)")
+    List<Appartement> findByCapacityBetween(@Param("min") Integer min,
+                                            @Param("max") Integer max);
+
+//    Iterable<Appartement> findByHuisdierenToegelaten(boolean huisdierenToegelaten);
 
 //    List<Appartement> findByFilter(@Param("minCapacity") Integer minCapacity,
 //                                   @Param("maxCapacity") Integer maxCapacity);

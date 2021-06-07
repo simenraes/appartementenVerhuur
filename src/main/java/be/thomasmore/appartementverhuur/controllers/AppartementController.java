@@ -38,24 +38,39 @@ public class AppartementController {
     }
     @GetMapping({"/appartementenlijst/filter"})
     public String appartementenlijstMetFilter(Model model,
-                                              @RequestParam(required = false) Integer minCapacity){
-//        logger.info(String.format("appartementenlijstMetFilter -- min=%d, max=%d", minCapacity, maxCapacity));
-          logger.info(String.format("appartementenlijstMetFilter -- min=%d", minCapacity));
+                                              @RequestParam(required = false) Integer minCapacity,
+                                              @RequestParam(required = false) Integer maxCapacity,
+                                              @RequestParam(required = false) String keyword){
+        logger.info(String.format("appartementenlijstMetFilter -- min=%d, max=%d, keyword=%s", minCapacity,
+                maxCapacity, keyword));
+
 
 //        List<Appartement> appartementen= appartementRepository.findByCapacityGreaterThanEqual(minCapacity);
 //        List<Appartement> appartementen= appartementRepository.findByFilter(minCapacity, maxCapacity);
 //
         List<Appartement> appartementen;
         if (minCapacity != null)
-            appartementen = appartementRepository.findByCapacityGreaterThan(minCapacity);
-        else
-            appartementen = appartementRepository.findAllBy();
+            if (maxCapacity != null) //min!=null and max!=null
+                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
+            else //min!=null and max==null
+                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
+        else // min==null
+            if (maxCapacity != null) //min==null and max!=null
+                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
+            else //min==null and max==null
+                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
+
+//        if (keyword != null)
+//            appartementen = appartementRepository.findByStadContainingIgnoreCase(keyword);
+//        else
+//            appartementen = appartementRepository.findAllBy();
         model.addAttribute("appartementen", appartementen);
         model.addAttribute("nrOfAppartementen", appartementen.size());
 
         model.addAttribute("showFilters", true);
         model.addAttribute("minCapacity", minCapacity);
-//        model.addAttribute("maxCapacity", maxCapacity);
+        model.addAttribute("maxCapacity", maxCapacity);
+//        model.addAttribute("keyword", keyword);
 
         return "appartementenlijst";
 
