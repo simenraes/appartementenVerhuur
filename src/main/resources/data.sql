@@ -20,4 +20,4 @@ insert into Appartement (
     ID, CAPACITY, APPARTEMENT_NAAM, STAD, IS_PARKING_BESCHIKBAAR, AFSTAND_TOT_CENTRUM, EXTRA_INFO, PRIJS_PER_MAAND,
     AANTAL_SLAAPKAMERS, OPPERVLAKTE, HUISDIEREN_TOEGELATEN)
 values (
-           4, 2, 'testnaam3', 'Antwerpen', true, 59, 'info', 500, 4, 30, true);
+           4, 2, 'testnaam3', 'Mechelen', true, 59, 'info', 500, 4, 30, true);
