@@ -2,6 +2,8 @@ package be.thomasmore.appartementverhuur.controllers;
 
 import be.thomasmore.appartementverhuur.model.Appartement;
 import be.thomasmore.appartementverhuur.repositories.AppartementRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,17 +16,21 @@ import java.util.Optional;
 
 @Controller
 public class AppartementController {
+    private Logger logger = LoggerFactory.getLogger(AppartementController.class);
+
     @Autowired
     private AppartementRepository appartementRepository;
+
 
 //    public AppartementController(AppartementRepository appartementRepository) {
 //        this.appartementRepository = appartementRepository;
 //    }
 
     @GetMapping({"/appartementenlijst"})
-    public String appartementenLijst(Model model) {
-        long nrOfAppartementen = appartementRepository.count();
+    public String appartementenlijst(Model model) {
+        logger.info("appartementenlijst");
         Iterable<Appartement> appartementen = appartementRepository.findAll();
+        long nrOfAppartementen = appartementRepository.count();
         model.addAttribute("appartementen", appartementen);
         model.addAttribute("nrOfAppartementen", nrOfAppartementen);
         return "appartementenlijst";
