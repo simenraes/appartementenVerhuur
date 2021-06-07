@@ -2,18 +2,24 @@ package be.thomasmore.appartementverhuur.controllers;
 
 import be.thomasmore.appartementverhuur.model.Appartement;
 import be.thomasmore.appartementverhuur.repositories.AppartementRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
 import java.util.Optional;
 
 
 @Controller
 public class AppartementController {
+    private Logger logger = LoggerFactory.getLogger(AppartementController.class);
+
     @Autowired
     private AppartementRepository appartementRepository;
 
@@ -27,7 +33,32 @@ public class AppartementController {
         Iterable<Appartement> appartementen = appartementRepository.findAll();
         model.addAttribute("appartementen", appartementen);
         model.addAttribute("nrOfAppartementen", nrOfAppartementen);
+        model.addAttribute("showFilters", false);
         return "appartementenlijst";
+    }
+    @GetMapping({"/appartementenlijst/filter"})
+    public String appartementenlijstMetFilter(Model model,
+                                              @RequestParam(required = false) Integer minCapacity){
+//        logger.info(String.format("appartementenlijstMetFilter -- min=%d, max=%d", minCapacity, maxCapacity));
+          logger.info(String.format("appartementenlijstMetFilter -- min=%d", minCapacity));
+
+//        List<Appartement> appartementen= appartementRepository.findByCapacityGreaterThanEqual(minCapacity);
+//        List<Appartement> appartementen= appartementRepository.findByFilter(minCapacity, maxCapacity);
+//
+        Iterable<Appartement> appartementen;
+        if (minCapacity != null)
+            appartementen = appartementRepository.findByCapacityGreaterThan(minCapacity);
+        else
+            appartementen = appartementRepository.findAll();
+        model.addAttribute("appartementen", appartementen);
+//        model.addAttribute("nrOfVenues", appartementen.size());
+
+        model.addAttribute("showFilters", true);
+        model.addAttribute("minCapacity", minCapacity);
+//        model.addAttribute("maxCapacity", maxCapacity);
+
+        return "appartementenlijst";
+
     }
 
     @GetMapping({"/appartementdetails", "/appartementdetails/{id}"})
@@ -47,12 +78,22 @@ public class AppartementController {
         }
         return "appartementdetails";
     }
-   @GetMapping("/appartementenlijst/huisdierentoegelaten/yes")
-    public String appartementenlijstHuisdierenToegelatenYes(Model model){
-        Iterable<Appartement> appartementen= appartementRepository.findByHuisdierenToegelaten(true);
-        model.addAttribute("appartementen", appartementen);
-        return "appartementenlijst";
-   }
+//   @GetMapping("/appartementenlijst/huisdierentoegelaten/yes")
+//    public String appartementenlijstHuisdierenToegelatenYes(Model model){
+//        Iterable<Appartement> appartementen= appartementRepository.findByHuisdierenToegelaten(true);
+//        model.addAttribute("appartementen", appartementen);
+//        return "appartementenlijst";
+//   }
+//    @GetMapping("/appartementenlijst/capacitygreaterthanequal/mincapacity")
+//    public String appartementenlijstCapacityGreaterThanEqual(Model model,
+//                                                             @RequestParam(required = false) Integer minCapacity){
+//        List<Appartement> appartementen= appartementRepository.findByCapacityGreaterThanEqual(minCapacity);
+//
+//        model.addAttribute("appartementen", appartementen);
+//        model.addAttribute("nrOfVenues", appartementen.size());
+//        return "appartementenlijst";
+//    }
+
 
 }
 
