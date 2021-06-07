@@ -45,13 +45,13 @@ public class AppartementController {
 //        List<Appartement> appartementen= appartementRepository.findByCapacityGreaterThanEqual(minCapacity);
 //        List<Appartement> appartementen= appartementRepository.findByFilter(minCapacity, maxCapacity);
 //
-        Iterable<Appartement> appartementen;
+        List<Appartement> appartementen;
         if (minCapacity != null)
             appartementen = appartementRepository.findByCapacityGreaterThan(minCapacity);
         else
-            appartementen = appartementRepository.findAll();
+            appartementen = appartementRepository.findAllBy();
         model.addAttribute("appartementen", appartementen);
-//        model.addAttribute("nrOfVenues", appartementen.size());
+        model.addAttribute("nrOfAppartementen", appartementen.size());
 
         model.addAttribute("showFilters", true);
         model.addAttribute("minCapacity", minCapacity);

@@ -12,7 +12,7 @@ public interface AppartementRepository extends CrudRepository<Appartement, Integ
 //List<Appartement>  findByCapacityGreaterThanEqual(@Param("minCapacity")Integer minCapacity);
 List<Appartement> findAllBy();
 //List<Appartement> findByCapacityGreaterThanEqual(Integer minCapacity);
-    Iterable<Appartement> findByCapacityGreaterThan(Integer minCapacity);
+    List<Appartement> findByCapacityGreaterThan(int minCapacity);
 
     Optional<Appartement> findById(Integer id);
 
