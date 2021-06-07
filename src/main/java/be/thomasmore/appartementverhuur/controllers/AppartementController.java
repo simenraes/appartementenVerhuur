@@ -21,7 +21,7 @@ public class AppartementController {
 //        this.appartementRepository = appartementRepository;
 //    }
 
-    @GetMapping("/appartementenlijst")
+    @GetMapping({"/appartementenlijst"})
     public String appartementenLijst(Model model) {
         long nrOfAppartementen = appartementRepository.count();
         Iterable<Appartement> appartementen = appartementRepository.findAll();
