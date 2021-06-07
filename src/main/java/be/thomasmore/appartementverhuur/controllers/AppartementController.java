@@ -40,32 +40,34 @@ public class AppartementController {
     @GetMapping({"/appartementenlijst/filter"})
     public String appartementenlijstMetFilter(Model model,
                                               @RequestParam(required = false) Integer minCapacity,
-                                              @RequestParam(required = false) Integer maxCapacity)
+                                              @RequestParam(required = false) Integer maxCapacity,
+                                              @RequestParam(required = false) Integer maxAfstandTotCentrum)
                                                {
-        logger.info(String.format("appartementenlijstMetFilter -- min=%d, max=%d", minCapacity,
-                maxCapacity));
+        logger.info(String.format("appartementenlijstMetFilter -- min=%d, max=%d, maxAfstandTotCentrum=%d", minCapacity,
+                maxCapacity, maxAfstandTotCentrum));
+        List<Appartement> appartementen = appartementRepository.findByFilter(minCapacity, maxCapacity,maxAfstandTotCentrum);
+
 
 
 //        List<Appartement> appartementen= appartementRepository.findByCapacityGreaterThanEqual(minCapacity);
 //        List<Appartement> appartementen= appartementRepository.findByFilter(minCapacity, maxCapacity);
 //
-        List<Appartement> appartementen;
-        if (minCapacity != null)
-            if (maxCapacity != null) //min!=null and max!=null
-                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
-            else //min!=null and max==null
-                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
-        else // min==null
-            if (maxCapacity != null) //min==null and max!=null
-                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
-            else //min==null and max==null
-                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
+//        List<Appartement> appartementen;
+//        if (minCapacity != null)
+//            if (maxCapacity != null) //min!=null and max!=null
+//                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
+//            else //min!=null and max==null
+//                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
+//        else // min==null
+//            if (maxCapacity != null) //min==null and max!=null
+//                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
+//            else //min==null and max==null
+//                appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity);
 
 //        if (keyword == null)
 //            appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity, keyword);
 //        else
 //            appartementen = appartementRepository.findByCapacityBetween(minCapacity, maxCapacity, keyword);
-
 
 
         model.addAttribute("appartementen", appartementen);
@@ -74,6 +76,7 @@ public class AppartementController {
         model.addAttribute("showFilters", true);
         model.addAttribute("minCapacity", minCapacity);
         model.addAttribute("maxCapacity", maxCapacity);
+        model.addAttribute("maxAfstandTotCentrum", maxAfstandTotCentrum);
 //        model.addAttribute("keyword", keyword);
 
         return "appartementenlijst";
