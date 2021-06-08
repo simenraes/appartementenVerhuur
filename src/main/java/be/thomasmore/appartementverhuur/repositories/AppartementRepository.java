@@ -24,10 +24,12 @@ public interface AppartementRepository extends CrudRepository<Appartement, Integ
     @Query("SELECT a FROM Appartement a WHERE " +
             "(:min IS NULL OR :min <= a.capacity) AND " +
             "(:max IS NULL OR a.capacity <= :max) AND " +
-            "(:maxAfstandTotCentrum IS NULL OR a.afstandTotCentrum <= :maxAfstandTotCentrum)")
+            "(:maxAfstandTotCentrum IS NULL OR a.afstandTotCentrum <= :maxAfstandTotCentrum) AND " +
+            "(:huisdierenToegelaten IS NULL OR a.huisdierenToegelaten = :huisdierenToegelaten)")
     List<Appartement> findByFilter(@Param("min") Integer min,
-                                            @Param("max") Integer max,
-                                            @Param("maxAfstandTotCentrum") Integer maxAfstandTotCentrum);
+                                   @Param("max") Integer max,
+                                   @Param("maxAfstandTotCentrum") Integer maxAfstandTotCentrum,
+                                   @Param("huisdierenToegelaten") Boolean huisdierenToegelaten);
 
 
 //    Iterable<Appartement> findByHuisdierenToegelaten(boolean huisdierenToegelaten);
