@@ -10,13 +10,38 @@
   <title>Title</title>
 </head>
 <body>
-<form>
+<form th:action="@{|/admin/appartementedit/${appartement.id}|}" method="post">
+
 
   <div class="venueinfo">
     <div class="infoLine">
       <label for="appartementNaam" class="infoLineName">naam: </label>
       <input id="appartementNaam" name="appartementNaam" value="name" th:value="${appartement.appartementNaam}" class="infoLineValue">
     </div>
+  </div>
+  <div class="venueinfo">
+    <div class="infoLine">
+      <label for="extraInfo" class="infoLineName">extra info: </label>
+      <input id="extraInfo" name="extraInfo" value="extraInfo" th:value="${appartement.extraInfo}"
+             class="infoLineValue">
+    </div>
+  </div>
+  <div class="venueinfo">
+    <div class="infoLine">
+      <label for="capacity" class="infoLineName">extra info: </label>
+      <input id="capacity" name="capacity" value="capacity" th:value="${appartement.capacity}" class="infoLineValue">
+    </div>
+  </div>
+  <div class="venueinfo">
+    <div class="infoLine">
+      <label for="parkingBeschikbaar" class="infoLineName">parking beschikbaar ?  </label>
+      <input id="parkingBeschikbaar" name="parkingBeschikbaar" value="parkingBeschikbaar" th:value="${appartement.parkingBeschikbaar}"
+             class="infoLineValue">
+    </div>
+  </div>
+  <div class="infoLine">
+    <a th:href="@{|/appartementdetails.html/${appartement.id}|}" class="buttonLook editButton">cancel</a>
+    <input type="submit" value="save" class="buttonLook editButton">
   </div>
 </form>
 <!--      in-->
@@ -59,13 +84,9 @@
 <!--  </div>-->
 <!--</div>-->
 
-<!--<div class="row1">-->
-<!--  <div class="row1content">-->
-<!--    <a th:href="@{|/partydetails/${party.id}|}" class="buttonLook editButton">cancel</a>-->
-<!--  </div>-->
 
-</div>
-</div>
+
+
 
 </body>
 </html>
