@@ -21,3 +21,8 @@ insert into Appartement (
     AANTAL_SLAAPKAMERS, OPPERVLAKTE, HUISDIEREN_TOEGELATEN)
 values (
            4, 5, 'testnaam3', 'Mechelen', true, 59, 'info', 500, 4, 30, true);
+
+insert into Boeking (
+    ID, START_DATUM, EIND_DATUM, NUM_DAYS, NUM_GUESTS, APPARTEMENT_ID)
+values (
+           1, '2021-04-03', '2021-04-25', 22, 4, 1);

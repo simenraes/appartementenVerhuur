@@ -1,0 +1,54 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+
+    <title>Title</title>
+</head>
+<body>
+<div class="venuelist">
+  <div th:each="boeking:${boekingen}">
+<!--    <a class="buttonLook mediumButton"-->
+<!--       th:href="@{|/appartementdetails/${appartement.id}|}">-->
+<!--      <span th:text="${appartement.appartementNaam}">appartement naam</span>-->
+      <div th:text="|id ${boeking.id}|" class="venueExtraInfo">boekingsid</div>
+      <div th:text="|aantal dagen ${boeking.getNumDays()}|" class="venueExtraInfo">aantal dagen</div>
+
+      <!--    </a>-->
+
+  </div>
+</div>
+<!--<table border="1">-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th>Id</th>-->
+<!--&lt;!&ndash;    <th>Last Name</th>&ndash;&gt;-->
+<!--&lt;!&ndash;    <th>Fist Name</th>&ndash;&gt;-->
+<!--    <th>From</th>-->
+<!--    <th>To</th>-->
+<!--    <th>Number of days</th>-->
+<!--    <th>Number of guests</th>-->
+<!--    <th>Apartment</th>-->
+<!--    <th>Apartment capacity</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr th:each="b: ${boekingen}">-->
+<!--    <td th:text="${b.id}"></td>-->
+<!--&lt;!&ndash;    <td th:text="${b.lastName}"></td>&ndash;&gt;-->
+<!--&lt;!&ndash;    <td th:text="${b.firstName}"></td>&ndash;&gt;-->
+<!--    <td th:text="${b.fromDate}"></td>-->
+<!--    <td th:text="${b.toDate}"></td>-->
+<!--    <td th:text="${b.numDays}"></td>-->
+<!--    <td th:text="${b.numGuests}"></td>-->
+<!--    <td th:text="${b.apartment.name}"></td>-->
+<!--    <td th:text="${b.apartment.capacity}"></td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+</body>
+</html>
