@@ -1,7 +1,10 @@
 package be.thomasmore.appartementverhuur.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Appartement {
@@ -17,6 +20,9 @@ public class Appartement {
     private int oppervlakte;
     private boolean huisdierenToegelaten;
     private int prijsPerMaand;
+    @OneToMany(mappedBy = "appartement", fetch = FetchType.LAZY)
+    private List<Boeking> boekingen;
+
 
 
     public Appartement() {
@@ -130,6 +136,14 @@ public class Appartement {
 
     public void setHuisdierenToegelaten(boolean huisdierenToegelaten) {
         this.huisdierenToegelaten = huisdierenToegelaten;
+    }
+
+    public List<Boeking> getBoekingen() {
+        return boekingen;
+    }
+
+    public void setBoekingen(List<Boeking> boekingen) {
+        this.boekingen = boekingen;
     }
 }
 

@@ -10,19 +10,87 @@
     <title>Title</title>
 </head>
 <body>
-<div th:text="|${nrOfAppartementen} appartementen gevonden|">30 appartementen</div>
+<div class="row1">
+    <div class="row1content">
+        <h2>appartementen</h2>
+        <div class="cols2">
+            <div th:text="|${nrOfAppartementen} appartementen gevonden|">20 appartementen</div>
+            <div th:unless="${showFilters}" class="filters">
+                <a class="buttonLook filterButton" th:href="@{/appartementenlijst/filter}">filter</a>
+            </div>
+            <div th:if="${showFilters}" class="filters">
+                <a class="buttonLook filterButton" th:href="@{/appartementenlijst}">-</a>
 
+                <form>
+                    <div class="onefilter">
+                        <input type="submit" value="search" class="buttonLook filterButton">
+                    </div>
+                    <h3>capacity</h3>
+                    <div class="onefilter">
+                        <label for="minCapacity" class="filtername">min</label>
+                        <input type="number" id="minCapacity" name="minCapacity" th:value="${minCapacity}" value="0"
+                               step="1"> personen
+                    </div>
+                    <div class="onefilter">
+                        <label for="maxCapacity" class="filtername">max</label>
+                        <input type="number" id="maxCapacity" name="maxCapacity" th:value="${maxCapacity}" value="0"
+                               step="1"> personen
+                    </div>
+                    <div class="onefilter">
+                        <label for="maxAfstandTotCentrum" class="filtername">max</label>
+                        <input type="number" id="maxAfstandTotCentrum" name="maxAfstandTotCentrum" th:value="${maxAfstandTotCentrum}" value="0"
+                               step="1"> km tot het centrum
+                    </div>
+                    <h3>huisdieren</h3>
+                    <div class="onefilter">
+                        <label for="huisdierenToegelaten_yes" class="filtername">yes</label>
+                        <input type="radio" id="huisdierenToegelaten_yes" name="huisdierenToegelaten_yes" value="yes"
+                               th:checked="${filterhuisdieren=='yes'}">
+                    </div>
+                    <div class="onefilter">
+                        <label for="huisdierenToegelaten_no" class="filtername">no</label>
+                        <input type="radio" id="huisdierenToegelaten_no" name="huisdierenToegelaten_no" value="no"
+                               th:checked="${filterhuisdieren=='no'}">
+                    </div>
+                    <div class="onefilter">
+                        <label for="huisdierenToegelaten_all" class="huisdierenToegelaten_all">all</label>
+                        <input type="radio" id="huisdierenToegelaten_all" name="filterFood" value="all"
+                               th:checked="${filterhuisdieren=='all'}">
+                    </div>
+<!--                    <h3>keyword</h3>-->
+<!--                    <div class="onefilter">-->
+<!--                        <label for="keyword" class="filtername"></label>-->
+<!--                        <input type="text" id="keyword" name="keyword" th:value="${keyword}" value="0">-->
+<!--                    </div>-->
 
-<div class="venuelist">
-    <div th:each="appartement:${appartementen}">
-        <a class="buttonLook mediumButton"
-           th:href="@{|/appartementdetails/${appartement.id}|}">
-            <span th:text="${appartement.appartementNaam}">appartement naam</span>
-            <div th:text="|capacity ${appartement.capacity}|" class="venueExtraInfo">maxNrOfPersons</div>
-        </a>
+                </form>
+            </div>
+            <div class="venuelist">
+                <div th:each="appartement:${appartementen}">
+                    <a class="buttonLook mediumButton"
+                       th:href="@{|/appartementdetails/${appartement.id}|}">
+                        <span th:text="${appartement.appartementNaam}">appartement naam</span>
+                        <div th:text="|capacity ${appartement.capacity}|" class="venueExtraInfo">maxNrOfPersons</div>
+                    </a>
 
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<!--<div th:text="|${nrOfAppartementen} appartementen gevonden|">30 appartementen</div>-->
+
+
+<!--<div class="venuelist">-->
+<!--    <div th:each="appartement:${appartementen}">-->
+<!--        <a class="buttonLook mediumButton"-->
+<!--           th:href="@{|/appartementdetails/${appartement.id}|}">-->
+<!--            <span th:text="${appartement.appartementNaam}">appartement naam</span>-->
+<!--            <div th:text="|capacity ${appartement.capacity}|" class="venueExtraInfo">maxNrOfPersons</div>-->
+<!--        </a>-->
+
+<!--    </div>-->
+<!--</div>-->
 
 
 </body>

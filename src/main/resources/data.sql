@@ -20,4 +20,19 @@ insert into Appartement (
     ID, CAPACITY, APPARTEMENT_NAAM, STAD, IS_PARKING_BESCHIKBAAR, AFSTAND_TOT_CENTRUM, EXTRA_INFO, PRIJS_PER_MAAND,
     AANTAL_SLAAPKAMERS, OPPERVLAKTE, HUISDIEREN_TOEGELATEN)
 values (
-           4, 2, 'testnaam3', 'Mechelen', true, 59, 'info', 500, 4, 30, true);
+           4, 5, 'testnaam3', 'Mechelen', true, 59, 'info', 500, 4, 30, true);
+
+insert into Boeking (
+    ID, START_DATUM, EIND_DATUM, NUM_DAYS, NUM_GUESTS, APPARTEMENT_ID)
+values (
+           1, '2021-04-03', '2021-04-25', 22, 4, 1);
+
+insert into Boeking (
+    ID, START_DATUM, EIND_DATUM, NUM_DAYS, NUM_GUESTS, APPARTEMENT_ID)
+values (
+           2, '2021-05-03', '2021-08-25', 22, 4, 1);
+
+insert into Boeking (
+    ID, START_DATUM, EIND_DATUM, NUM_DAYS, NUM_GUESTS, APPARTEMENT_ID)
+values (
+           3, '2021-09-03', '2021-10-25', 22, 4, 1);
