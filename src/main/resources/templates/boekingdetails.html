@@ -1,10 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+
     <title>Title</title>
 </head>
 <body>
+<div class="row1">
+
+    <div class="row1content" th:if="${boeking}">
+
+        <div class="prevButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/boekingdetails/${prevId}|}">&lt;</a>
+        </div>
+        <div class="nextButtonDiv">
+            <a class="buttonLook smallButton" th:href="@{|/boekingdetails/${nextId}|}">&gt;</a>
+        </div>
+
+<!--        <h2 th:text="|appartement: ${appartement.appartementNaam}|">appartementdetails</h2>-->
+
+        <div class="venueinfo">
+            <div class="infoLine">
+                <div class="infoLineName">id boeking:</div>
+                <div class="infoLineValue">
+                    <a th:text="${boeking.id}" class="linkLook" target="_blank">
+                        id</a>
+                </div>
+            </div>
+            <div class="infoLine">
+                <div class="infoLineName">aantal dagen:</div>
+                <div class="infoLineValue" th:text="|${boeking.getNumDays()} dagen|">aantal dagen</div>
+            </div>
+            <div class="infoLine">
+                <div class="infoLineName">van:</div>
+                <div class="infoLineValue" th:text="${boeking.startDatum}">
+                    startDatum
+                </div>
+            </div>
+            <div class="infoLine">
+                <div class="infoLineName">tot:</div>
+                <div class="infoLineValue" th:text="${boeking.eindDatum}">tot</div>
+            </div>
+            <div class="infoLine">
+                <div class="infoLineName">aantal gasten</div>
+                <div class="infoLineValue" th:text="|${boeking.numGuests} km|">aantalgasten</div>
+            </div>
+
+            <div class="infoLine">
+                <div class="infoLineName">naam van appartement:</div>
+                <div class="infoLineValue" th:text="${boeking.appartement.appartementNaam}">appartementNaam</div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="row1content" th:unless="${boeking}">
+        <p>geen boeking gekozen</p>
+    </div>
+
+</div>
 
 </body>
 </html>

@@ -26,3 +26,13 @@ insert into Boeking (
     ID, START_DATUM, EIND_DATUM, NUM_DAYS, NUM_GUESTS, APPARTEMENT_ID)
 values (
            1, '2021-04-03', '2021-04-25', 22, 4, 1);
+
+insert into Boeking (
+    ID, START_DATUM, EIND_DATUM, NUM_DAYS, NUM_GUESTS, APPARTEMENT_ID)
+values (
+           2, '2021-05-03', '2021-08-25', 22, 4, 1);
+
+insert into Boeking (
+    ID, START_DATUM, EIND_DATUM, NUM_DAYS, NUM_GUESTS, APPARTEMENT_ID)
+values (
+           3, '2021-09-03', '2021-10-25', 22, 4, 1);
