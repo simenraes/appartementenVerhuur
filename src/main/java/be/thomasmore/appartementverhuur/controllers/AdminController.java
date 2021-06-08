@@ -50,12 +50,12 @@ public class AdminController {
         Optional<Appartement> optionalAppartement = appartementRepository.findById(id);
         if (optionalAppartement.isPresent()) {
             Appartement editedAppartement = optionalAppartement.get();
-            appartement.setExtraInfo(appartement.getExtraInfo());
-            appartement.setCapacity(appartement.getCapacity());
-            appartement.setIsParkingBeschikbaar(appartement.isParkingBeschikbaar());
-            appartement.setAppartementNaam(appartement.getAppartementNaam());
+            editedAppartement.setExtraInfo(appartement.getExtraInfo());
+            editedAppartement.setCapacity(appartement.getCapacity());
+            editedAppartement.setIsParkingBeschikbaar(appartement.isParkingBeschikbaar());
+            editedAppartement.setAppartementNaam(appartement.getAppartementNaam());
             appartementRepository.save(appartement);
-            model.addAttribute("appartement", appartement);
+            model.addAttribute("appartement", editedAppartement);
         }
         return "redirect:/appartementdetails/"+id;
     }
