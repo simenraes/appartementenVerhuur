@@ -29,21 +29,18 @@ public class AdminController {
     @PostMapping("/appartementedit/{id}")
     public String partyEditPost(Model model,
                                 @PathVariable int id,
-                                @RequestParam String appartementNaam,
-                                @RequestParam String extraInfo,
-                                @RequestParam int capacity,
-                                @RequestParam boolean parkingBeschikbaar) {
+                                @ModelAttribute("appartement") Appartement appartement) {
 
         Optional<Appartement> optionalAppartement = appartementRepository.findById(id);
         if (optionalAppartement.isPresent()) {
-            Appartement appartement = optionalAppartement.get();
-            appartement.setExtraInfo(extraInfo);
-            appartement.setCapacity(capacity);
-            appartement.setIsParkingBeschikbaar(parkingBeschikbaar);
-            appartement.setAppartementNaam(appartementNaam);
+            Appartement editedAppartement = optionalAppartement.get();
+            appartement.setExtraInfo(appartement.getExtraInfo());
+            appartement.setCapacity(appartement.getCapacity());
+            appartement.setIsParkingBeschikbaar(appartement.isParkingBeschikbaar());
+            appartement.setAppartementNaam(appartement.getAppartementNaam());
             appartementRepository.save(appartement);
             model.addAttribute("appartement", appartement);
         }
-        return "admin/appartementedit";
+        return "redirect:/appartementdetails/"+id;
     }
 }

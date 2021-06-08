@@ -10,32 +10,32 @@
   <title>Title</title>
 </head>
 <body>
-<form th:action="@{|/admin/appartementedit/${appartement.id}|}" method="post">
+<form th:action="@{|/admin/appartementedit/${appartement.id}|}" th:object="${appartement}" method="post">
 
 
   <div class="venueinfo">
     <div class="infoLine">
       <label for="appartementNaam" class="infoLineName">naam: </label>
-      <input id="appartementNaam" name="appartementNaam" value="name" th:value="${appartement.appartementNaam}" class="infoLineValue">
+      <input id="appartementNaam" th:field="*{appartementNaam}" th:value="${appartement.appartementNaam}" class="infoLineValue">
     </div>
   </div>
   <div class="venueinfo">
     <div class="infoLine">
       <label for="extraInfo" class="infoLineName">extra info: </label>
-      <input id="extraInfo" name="extraInfo" value="extraInfo" th:value="${appartement.extraInfo}"
+      <input id="extraInfo" th:field="*{extraInfo}" th:value="${appartement.extraInfo}"
              class="infoLineValue">
     </div>
   </div>
   <div class="venueinfo">
     <div class="infoLine">
-      <label for="capacity" class="infoLineName">extra info: </label>
-      <input id="capacity" name="capacity" value="capacity" th:value="${appartement.capacity}" class="infoLineValue">
+      <label for="capacity" class="infoLineName">capaciteit: </label>
+      <input id="capacity" th:field="*{capacity}"  class="infoLineValue">
     </div>
   </div>
   <div class="venueinfo">
     <div class="infoLine">
       <label for="parkingBeschikbaar" class="infoLineName">parking beschikbaar ?  </label>
-      <input id="parkingBeschikbaar" name="parkingBeschikbaar" value="parkingBeschikbaar" th:value="${appartement.parkingBeschikbaar}"
+      <input id="parkingBeschikbaar" th:field="*{parkingBeschikbaar}"
              class="infoLineValue">
     </div>
   </div>
