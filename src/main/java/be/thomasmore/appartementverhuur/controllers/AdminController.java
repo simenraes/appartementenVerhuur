@@ -21,7 +21,9 @@ public class AdminController {
 
     @ModelAttribute("appartement")
     public Appartement findAppartement(@PathVariable(required = false) Integer id) {
+        //Spring roept eerst de @ModelAttribute functie (findParty) op. Die functie heeft een PathVariable id. Spring gebruikt hiervoor dezelfde parameter als in de  Request Handler. Maar de Request Handler partyNew heeft geen PathVariable.
         logger.info("findAppartement " + id);
+        if (id == null) return new Appartement();
 
 
         Optional<Appartement> optionalAppartement = appartementRepository.findById(id);
@@ -42,10 +44,11 @@ public class AdminController {
 
         return "admin/appartementedit";
     }
+
     @PostMapping("/appartementedit/{id}")
-    public String partyEditPost(Model model,
-                                @PathVariable int id,
-                                @ModelAttribute("appartement") Appartement appartement) {
+    public String appartementEditPost(Model model,
+                                      @PathVariable int id,
+                                      @ModelAttribute("appartement") Appartement appartement) {
 
         Optional<Appartement> optionalAppartement = appartementRepository.findById(id);
         if (optionalAppartement.isPresent()) {
@@ -57,6 +60,42 @@ public class AdminController {
             appartementRepository.save(appartement);
             model.addAttribute("appartement", editedAppartement);
         }
-        return "redirect:/appartementdetails/"+id;
+        return "redirect:/appartementdetails/" + id;
     }
+    @GetMapping("/appartementnew")
+    public String appartementNew(Model model){
+        model.addAttribute("appartement", new Appartement());
+        model.addAttribute("appartementen", appartementRepository.findAll());
+        return "admin/appartementnew";
+    }
+
+//    @GetMapping("/appartementnew")
+//    public String newAppartement() {
+////        model.addAttribute("appartement", new Appartement());
+////        model.addAttribute("appartementen", appartementRepository.findAll());
+//        return "admin/appartementnew";
+
+//    }
+//    @PostMapping("/admin/appartementnew")
+//    public String newAppartementPost(Model model,
+//                                     @ModelAttribute("appartement") Appartement appartement){
+////        model.addAttribute("appartementen", appartementRepository.findAll());
+//        appartement.setAppartementNaam(appartement.getAppartementNaam());
+//        appartement.setCapacity(appartement.getCapacity());
+//        appartement.setStad(appartement.getStad());
+//        appartement.setIsParkingBeschikbaar(appartement.isParkingBeschikbaar());
+//        appartement.setAfstandTotCentrum(appartement.getAfstandTotCentrum());
+//        appartement.setExtraInfo(appartement.getExtraInfo());
+//        appartement.setAantalSlaapkamers(appartement.getAantalSlaapkamers());
+//        appartement.setOppervlakte(appartement.getOppervlakte());
+//        appartement.setHuisdierenToegelaten(appartement.isHuisdierenToegelaten());
+//        appartement.setPrijsPerMaand(appartement.getPrijsPerMaand());
+//        Appartement newAppartement= appartementRepository.save(appartement);
+//
+//
+//
+//
+//
+//        return "redirect:/appartementdetails/" + newAppartement.getId();
+//    }
 }

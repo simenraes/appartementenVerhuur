@@ -1,13 +1,12 @@
 package be.thomasmore.appartementverhuur.model;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Appartement {
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "appartement_generator")
+    @SequenceGenerator(name = "appartement_generator", sequenceName = "appartement_seq", allocationSize = 1)
     @Id
     private Integer id;
     private int capacity;
@@ -20,8 +19,8 @@ public class Appartement {
     private int oppervlakte;
     private boolean huisdierenToegelaten;
     private int prijsPerMaand;
-    @OneToMany(mappedBy = "appartement", fetch = FetchType.LAZY)
-    private List<Boeking> boekingen;
+//    @OneToMany(mappedBy = "appartement", fetch = FetchType.LAZY)
+//    private List<Boeking> boekingen;
 
 
 
@@ -138,12 +137,12 @@ public class Appartement {
         this.huisdierenToegelaten = huisdierenToegelaten;
     }
 
-    public List<Boeking> getBoekingen() {
-        return boekingen;
-    }
-
-    public void setBoekingen(List<Boeking> boekingen) {
-        this.boekingen = boekingen;
-    }
+//    public List<Boeking> getBoekingen() {
+//        return boekingen;
+//    }
+//
+//    public void setBoekingen(List<Boeking> boekingen) {
+//        this.boekingen = boekingen;
+//    }
 }
 
