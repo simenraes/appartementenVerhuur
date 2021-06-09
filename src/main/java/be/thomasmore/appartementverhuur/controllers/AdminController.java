@@ -68,6 +68,14 @@ public class AdminController {
         model.addAttribute("appartementen", appartementRepository.findAll());
         return "admin/appartementnew";
     }
+    @PostMapping("/appartementnew")
+    public String appartementNewPost(Model model,
+                                     @ModelAttribute("appartement") Appartement appartement){
+
+        Appartement newAppartement= appartementRepository.save(appartement);
+        return "redirect:/appartementdetails/"+ newAppartement.getId();
+
+    }
 
 //    @GetMapping("/appartementnew")
 //    public String newAppartement() {
