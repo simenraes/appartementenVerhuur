@@ -104,7 +104,7 @@ public class AdminController {
         model.addAttribute("boeking", new Boeking());
         model.addAttribute("boekingen", boekingRepository.findAll());
         model.addAttribute("appartementen", appartementRepository.findAll());
-        return "/admin/boekingnew";
+        return "admin/boekingnew";
 
     }
     @PostMapping("/boekingnew")
