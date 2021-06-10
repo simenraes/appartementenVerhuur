@@ -10,15 +10,17 @@ import java.util.Date;
 
 @Entity
 public class Boeking {
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "boeking_generator")
+    @SequenceGenerator(name = "boeking_generator", sequenceName = "boeking_seq", allocationSize = 1)
     @Id
     private Integer id;
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date startDatum;
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date eindDatum;
     @ManyToOne(fetch = FetchType.LAZY)
     private Appartement appartement;
@@ -27,6 +29,9 @@ public class Boeking {
     private Integer numDays = 1;
     @Min(value = 1)
     private Integer numGuests = 1;
+
+
+
 
     public Boeking() {
     }

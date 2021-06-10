@@ -19,8 +19,8 @@ public class Appartement {
     private int oppervlakte;
     private boolean huisdierenToegelaten;
     private int prijsPerMaand;
-//    @OneToMany(mappedBy = "appartement", fetch = FetchType.LAZY)
-//    private List<Boeking> boekingen;
+    @OneToMany(mappedBy = "appartement", fetch = FetchType.LAZY)
+    private List<Boeking> boekingen;
 
 
 

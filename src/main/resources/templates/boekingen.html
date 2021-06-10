@@ -21,34 +21,34 @@
 
   </div>
 </div>
-<!--<table border="1">-->
-<!--  <thead>-->
-<!--  <tr>-->
-<!--    <th>Id</th>-->
-<!--&lt;!&ndash;    <th>Last Name</th>&ndash;&gt;-->
-<!--&lt;!&ndash;    <th>Fist Name</th>&ndash;&gt;-->
-<!--    <th>From</th>-->
-<!--    <th>To</th>-->
-<!--    <th>Number of days</th>-->
-<!--    <th>Number of guests</th>-->
-<!--    <th>Apartment</th>-->
-<!--    <th>Apartment capacity</th>-->
-<!--  </tr>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-<!--  <tr th:each="b: ${boekingen}">-->
-<!--    <td th:text="${b.id}"></td>-->
-<!--&lt;!&ndash;    <td th:text="${b.lastName}"></td>&ndash;&gt;-->
-<!--&lt;!&ndash;    <td th:text="${b.firstName}"></td>&ndash;&gt;-->
-<!--    <td th:text="${b.fromDate}"></td>-->
-<!--    <td th:text="${b.toDate}"></td>-->
-<!--    <td th:text="${b.numDays}"></td>-->
-<!--    <td th:text="${b.numGuests}"></td>-->
-<!--    <td th:text="${b.apartment.name}"></td>-->
-<!--    <td th:text="${b.apartment.capacity}"></td>-->
-<!--  </tr>-->
-<!--  </tbody>-->
-<!--</table>-->
+<table border="1">
+  <thead>
+  <tr>
+    <th>Id</th>
+<!--    <th>Last Name</th>-->
+<!--    <th>Fist Name</th>-->
+    <th>From</th>
+    <th>To</th>
+    <th>Number of days</th>
+    <th>Number of guests</th>
+    <th>Apartment</th>
+    <th>Apartment capacity</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="b: ${boekingen}">
+    <td th:text="${b.id}"></td>
+<!--    <td th:text="${b.lastName}"></td>-->
+<!--    <td th:text="${b.firstName}"></td>-->
+    <td th:text="${b.startDatum}"></td>
+    <td th:text="${b.eindDatum}"></td>
+    <td th:text="${b.numDays}"></td>
+    <td th:text="${b.numGuests}"></td>
+    <td th:text="${b.appartement.appartementNaam}"></td>
+    <td th:text="${b.appartement.capacity}"></td>
+  </tr>
+  </tbody>
+</table>
 
 </body>
 </html>

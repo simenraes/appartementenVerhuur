@@ -75,8 +75,30 @@
 
 </div>
 <div class="editButtonDiv">
-    <a th:href="@{|/admin/appartementedit/${appartement.id}|}" class="buttonLook smallButton">edit</a>
+    <a th:href="@{|/admin/appartementedit/${appartement.id}|}" class="buttonLook smallButton">editapp</a>
 </div>
+
+
+<div class="row1"  th:if="${appartement}">
+    <div class="row1content">
+        <h2  th:text="|boekingen van  ${appartement.appartementNaam}|">boekingen van dit appartement</h2>
+
+        <div class="venuelist">
+            <div th:each="boeking:${boekingen}">
+                <a class="buttonLook mediumButton" th:href="@{|/boekingdetails/${boeking.id}|}">
+                    <span th:text="${boeking.startDatum}">startdatum</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="editButtonDiv">
+    <a th:href="@{|/admin/appartementedit/${appartement.id}|}" class="buttonLook smallButton">editapp</a>
+</div>
+
+<!--<div class="editButtonDiv">-->
+<!--    <a th:href="@{|/admin/boekingnew}" class="buttonLook smallButton">new</a>-->
+<!--</div>-->
 
 
 </body>

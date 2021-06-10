@@ -1,7 +1,9 @@
 package be.thomasmore.appartementverhuur.controllers;
 
 import be.thomasmore.appartementverhuur.model.Appartement;
+import be.thomasmore.appartementverhuur.model.Boeking;
 import be.thomasmore.appartementverhuur.repositories.AppartementRepository;
+import be.thomasmore.appartementverhuur.repositories.BoekingRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class AppartementController {
 
     @Autowired
     private AppartementRepository appartementRepository;
+    @Autowired
+    private BoekingRepository boekingRepository;
+
 
 
 //    public AppartementController(AppartementRepository appartementRepository) {
@@ -99,11 +104,15 @@ public class AppartementController {
         if (id == null) return "appartementdetails";
 
         Optional<Appartement> optionalAppartement = appartementRepository.findById(id);
+
         if (optionalAppartement.isPresent()) {
+
             long nrOfVAppartementen = appartementRepository.count();
+            Iterable<Boeking> boekingen = boekingRepository.findByAppartement(optionalAppartement.get());
             model.addAttribute("appartement", (optionalAppartement.get()));
             model.addAttribute("prevId", id > 1 ? id - 1 : nrOfVAppartementen);
             model.addAttribute("nextId", id < nrOfVAppartementen ? id + 1 : 1);
+            model.addAttribute("boekingen", boekingen);
 
 
         }

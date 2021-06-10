@@ -10,19 +10,31 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 import java.util.Optional;
 
 @Controller
+
 public class BoekingController {
     @Autowired
     private AppartementRepository appartementRepository;
-   @Autowired
+    @Autowired
     private BoekingRepository boekingRepository;
 
+    //    @GetMapping("/boekingen")
+//    public String boekingenLijst(Model model){
+//        Iterable<Appartement> appartementen = appartementRepository.findAll();
+//        Iterable<Boeking> boekingen = boekingRepository.findAll();
+//        model.addAttribute("boekingen", boekingen);
+//        model.addAttribute("appartementen", appartementen);
+//        return "boekingen";
+//
+//    }
     @GetMapping("/boekingen")
-    public String boekingenLijst(Model model){
+    public String boekingenLijst(Model model) {
         Iterable<Appartement> appartementen = appartementRepository.findAll();
         Iterable<Boeking> boekingen = boekingRepository.findAll();
         model.addAttribute("boekingen", boekingen);
@@ -30,9 +42,12 @@ public class BoekingController {
         return "boekingen";
 
     }
+
+
+
     @GetMapping({"/boekingdetails", "/boekingdetails/{id}"})
-    public String boekinDetails(Model model,
-                                @PathVariable(required = false) Integer id){
+    public String boekingDetails(Model model,
+                                @PathVariable(required = false) Integer id) {
         if (id == null) return "boekingdetails";
         Optional<Boeking> optionalBoeking = boekingRepository.findById(id);
         Iterable<Appartement> appartementen = appartementRepository.findAll();
@@ -42,7 +57,6 @@ public class BoekingController {
             model.addAttribute("prevId", id > 1 ? id - 1 : nrOfBoekingen);
             model.addAttribute("nextId", id < nrOfBoekingen ? id + 1 : 1);
             model.addAttribute("appartementen", appartementen);
-
 
 
         }
