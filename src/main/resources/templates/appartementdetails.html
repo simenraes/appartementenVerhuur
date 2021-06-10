@@ -7,9 +7,9 @@
     <title>Title</title>
 </head>
 <body>
-<div class="row1">
+<div class="details">
 
-    <div class="row1content" th:if="${appartement}">
+    <div class="detailscontent" th:if="${appartement}">
 
         <div class="prevButtonDiv">
             <a class="buttonLook smallButton" th:href="@{|/appartementdetails/${prevId}|}">&lt;</a>
@@ -20,7 +20,7 @@
 
         <h2 th:text="|appartement: ${appartement.appartementNaam}|">appartementdetails</h2>
 
-        <div class="venueinfo">
+        <div class="appartementinfo">
             <div class="infoLine">
                 <div class="infoLineName">info:</div>
                 <div class="infoLineValue">
@@ -79,8 +79,8 @@
 </div>
 
 
-<div class="row1"  th:if="${appartement}">
-    <div class="row1content">
+<div class="boekingenVanAppartement"  th:if="${appartement}">
+    <div class="boekingenVanAppartementcontent">
         <h2  th:text="|boekingen van  ${appartement.appartementNaam}|">boekingen van dit appartement</h2>
 
         <div class="venuelist">

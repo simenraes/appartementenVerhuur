@@ -7,20 +7,26 @@
     <title>Title</title>
 </head>
 <body>
-<div th:fragment="header">
-    <div class="nav" >
-        <h1>appartementenverhuur</h1>
-
-        <div class="navbuttons">
-            <a class="buttonLook menuButton" th:href="@{/}">home</a>
-            <a class="buttonLook menuButton" th:href="@{/appartementenlijst}">appartementen</a>
-            <a class="buttonLook menuButton" th:href="@{/boekingen}">boekingen</a>
-
-
+<header>
+    <div th:fragment="header">
+        <div class="text-center mb-5 mt-5 font-weight-bold">
+            <p class="TitleHome">appartementenverhuur</p>
         </div>
+        <div class="nav">
+
+
+            <div class="navbar-dark">
+                <ul>
+                    <li class="active"><a class="nav-button" th:href="@{/}">home</a></li>
+                    <li><a class="nav-button" th:href="@{/appartementenlijst}">appartementen</a></li>
+                    <li><a class="nav-button" th:href="@{/boekingen}">boekingen</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="freespaceforheader"></div>
     </div>
-    <div class="freespaceforheader"></div>
-</div>
+</header>
 
 </body>
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="htmlHomePage">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
 <!--    <link rel="stylesheet" th:href="@{css/bootstrap.css}" href="/../static/css/bootstrap.css">-->
 
 
-    <title>appartementenverhuur</title>
+    <title>Appartementenverhuur</title>
 </head>
 <body>
 <div th:replace="fragments/header :: header">Header</div>
@@ -14,19 +14,11 @@
 
 
 <div class="row1">
-    <div class="row1content">
-        <div class="editButtonDiv">
-            <a th:href="@{|/admin/appartementnew|}" class="buttonLook smallButton">new</a>
-        </div>
-    </div>
+    <img th:src="@{/css/img/app1.png}" src="../static/css/img/app1.png" alt="Appartement" height="840"
+         width="1583"/>
+
 </div>
-<div class="row1">
-    <div class="row1content">
-        <div class="editButtonDiv">
-            <a th:href="@{|/admin/boekingnew|}" class="buttonLook smallButton">new</a>
-        </div>
-    </div>
-</div>
+
 
 
 
