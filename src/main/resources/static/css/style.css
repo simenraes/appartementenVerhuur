@@ -540,3 +540,13 @@ body {
     padding: 30px;
     margin: 0 30px;
 }
+/*TABLE CSS*/
+.boekingTabel{
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 370px;
+}
+.h2Boekingen{
+    text-align: center;
+
+}

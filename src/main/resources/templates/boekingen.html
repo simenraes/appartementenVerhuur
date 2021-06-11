@@ -7,46 +7,53 @@
     <title>Title</title>
 </head>
 <body>
-<div class="venuelist">
-  <div th:each="boeking:${boekingen}">
-<!--    <a class="buttonLook mediumButton"-->
-<!--       th:href="@{|/appartementdetails/${appartement.id}|}">-->
-<!--      <span th:text="${appartement.appartementNaam}">appartement naam</span>-->
-      <div th:text="|id ${boeking.id}|" class="venueExtraInfo">boekingsid</div>
-      <div th:text="|aantal dagen ${boeking.getNumDays()}|" class="venueExtraInfo">aantal dagen</div>
+<div th:replace="fragments/header :: header">Header</div>
 
-      <!--    </a>-->
+<!--<div class="venuelist">-->
+<!--  <div th:each="boeking:${boekingen}">-->
+<!--&lt;!&ndash;    <a class="buttonLook mediumButton"&ndash;&gt;-->
+<!--&lt;!&ndash;       th:href="@{|/appartementdetails/${appartement.id}|}">&ndash;&gt;-->
+<!--&lt;!&ndash;      <span th:text="${appartement.appartementNaam}">appartement naam</span>&ndash;&gt;-->
+<!--      <div th:text="|id ${boeking.id}|" class="venueExtraInfo">boekingsid</div>-->
+<!--      <div th:text="|aantal dagen ${boeking.getNumDays()}|" class="venueExtraInfo">aantal dagen</div>-->
 
-  </div>
-</div>
-<table border="1">
+<!--      &lt;!&ndash;    </a>&ndash;&gt;-->
+
+<!--  </div>-->
+<!--</div>-->
+<h2 class="h2Boekingen">Overzicht boekingen</h2>
+<table border="1" class="boekingTabel">
   <thead>
   <tr>
     <th>Id</th>
+    <th>Apartment</th>
 <!--    <th>Last Name</th>-->
 <!--    <th>Fist Name</th>-->
     <th>From</th>
     <th>To</th>
     <th>Number of days</th>
     <th>Number of guests</th>
-    <th>Apartment</th>
+
     <th>Apartment capacity</th>
   </tr>
   </thead>
   <tbody>
   <tr th:each="b: ${boekingen}">
     <td th:text="${b.id}"></td>
-<!--    <td th:text="${b.lastName}"></td>-->
+    <td th:text="${b.appartement.appartementNaam}"></td>
+
+    <!--    <td th:text="${b.lastName}"></td>-->
 <!--    <td th:text="${b.firstName}"></td>-->
     <td th:text="${b.startDatum}"></td>
     <td th:text="${b.eindDatum}"></td>
     <td th:text="${b.numDays}"></td>
     <td th:text="${b.numGuests}"></td>
-    <td th:text="${b.appartement.appartementNaam}"></td>
     <td th:text="${b.appartement.capacity}"></td>
   </tr>
   </tbody>
 </table>
+
+
 
 </body>
 </html>
