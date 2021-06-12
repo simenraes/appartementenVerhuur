@@ -1,17 +1,17 @@
-/*!**/
-/*    https://coolors.co/d0cfec-6a8e7f-989572-c6ae82-edc7cf*/
-/*SOAP: #D0CFEC;*/
-/*AUTOMETALSAURUS: #6A8E7F*/
-/*ARTICHOKE: #989572*/
-/*LIGHT FRENCH BEIGE: #C6AE82*/
-/*CAMEO PINK: #EDC7CF*/
-/* *!*/
-/*!** {*!*/
-/*!*    margin: 0;*!*/
-/*!*    box-sizing: border-box;*!*/
-/*!*}*!*/
+/*
+    https://coolors.co/d0cfec-6a8e7f-989572-c6ae82-edc7cf
+SOAP: #D0CFEC;
+AUTOMETALSAURUS: #6A8E7F
+ARTICHOKE: #989572
+LIGHT FRENCH BEIGE: #C6AE82
+CAMEO PINK: #EDC7CF
+ */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
 
-/*!*!* general styles for html elements *!*!*/
+/* general styles for html elements */
 
 
 
