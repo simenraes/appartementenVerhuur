@@ -185,4 +185,11 @@ body {
 }
 .hello{
     position: absolute;
+    float: right;
+}
+.LoginlogoutBody{
+    font-family: "Roboto Light", sans-serif;
+    width: 100%;
+    background: url("/img/app1.png");
+    text-align: center;
 }

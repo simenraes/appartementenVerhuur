@@ -80,4 +80,14 @@ public class UserController {
             e.printStackTrace();
         }
     }
+    @GetMapping("/login")
+    public String login(Model model,  Principal principal) {
+        if (principal!=null) return "redirect:/appartementenlijst";
+        return "user/login";
+    }
+    @GetMapping("/logout")
+    public String logout(Model model, Principal principal) {
+        if (principal==null) return "redirect:/appartementenlijst";
+        return "user/logout";
+    }
 }

@@ -23,9 +23,9 @@
                     <li class="active"><a class="nav-button" th:href="@{/}">home</a></li>
                     <li><a class="nav-button" th:href="@{/appartementenlijst}">appartementen</a></li>
                     <li><a class="nav-button" th:href="@{/boekingen}">boekingen</a></li>
-                    <li><a sec:authorize="isAuthenticated()" th:href="@{/logout}"
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{|/user/logout|}"
                         class="nav-button">logout</a></li>
-                    <li><a sec:authorize="!isAuthenticated()" th:href="@{/login}"
+                    <li><a sec:authorize="!isAuthenticated()" th:href="@{/user/login}"
                         class="buttonLook menuButton authButton">login</a></li>
 
                 </ul>
