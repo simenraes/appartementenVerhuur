@@ -20,7 +20,7 @@ insert into Appartement (
     ID, CAPACITY, APPARTEMENT_NAAM, STAD, IS_PARKING_BESCHIKBAAR, AFSTAND_TOT_CENTRUM, EXTRA_INFO, PRIJS_PER_MAAND,
     AANTAL_SLAAPKAMERS, OPPERVLAKTE, HUISDIEREN_TOEGELATEN)
 values (
-           (nextval('APPARTEMENT_SEQ')), 5, 'testnaam3', 'Mechelen', true, 59, 'info', 500, 4, 30, true);
+           (nextval('APPARTEMENT_SEQ')), 7, 'testnaam3', 'Mechelen', true, 59, 'info', 500, 4, 30, true);
 
 insert into Boeking (
     ID, START_DATUM, EIND_DATUM, NUM_DAYS, NUM_GUESTS, APPARTEMENT_ID)
