@@ -84,37 +84,7 @@ public class AdminController {
 
     }
 
-    @ModelAttribute("boeking")
-    public Boeking findBoeking(@PathVariable(required = false) Integer id) {
-        //Spring roept eerst de @ModelAttribute functie (findParty) op. Die functie heeft een PathVariable id. Spring gebruikt hiervoor dezelfde parameter als in de  Request Handler. Maar de Request Handler partyNew heeft geen PathVariable.
-        logger.info("findBoeking " + id);
-        if (id == null) return new Boeking();
 
-
-        Optional<Boeking> optionalBoeking = boekingRepository.findById(id);
-        if (optionalBoeking.isPresent())
-            return optionalBoeking.get();
-        return null;
-
-
-    }
-
-    @GetMapping("/boekingnew")
-    public String boekingNew(Model model) {
-        model.addAttribute("boeking", new Boeking());
-        model.addAttribute("boekingen", boekingRepository.findAll());
-        model.addAttribute("appartementen", appartementRepository.findAll());
-        return "admin/boekingnew";
-
-    }
-    @PostMapping("/boekingnew")
-    public String boekinNewPost(@ModelAttribute("boeking") Boeking boeking,
-                                @ModelAttribute("appartement") Appartement appartement){
-
-        Boeking newBoeking = boekingRepository.save(boeking);
-        return "redirect:/boekingdetails/" + newBoeking.getId();
-
-    }
 }
 
 //    @GetMapping("/appartementnew")

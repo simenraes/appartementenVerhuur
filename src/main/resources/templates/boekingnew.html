@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"
-          href="../admin/static/css/style.css"/>
+          href="../static/css/style.css"/>
 
     <title>Title</title>
 </head>
 <body>
 <div th:replace="fragments/header :: header">Header</div>
 
-<form th:object="${boeking}" th:action="@{|/admin/boekingnew|}" method="post">
+<form th:object="${boeking}" th:action="@{/boekingnew}" method="post">
     <div class="appartementinfo">
         <!--        <div class="infoLine">-->
         <!--            <label for="appartementNaam" class="infoLineName">id van app: </label>-->
@@ -40,7 +40,7 @@
             <input id="appartementId" th:field="*{appartement.id}" class="infoLineValue">
         </div>
         <div class="infoLine">
-            <a th:href="@{|/admin/boekingnew|}" class="cancelButton">cancel</a>
+            <a th:href="@{/boekingnew}" class="cancelButton">cancel</a>
             <input type="submit" value="save" class="editButton">
         </div>
     </div>
