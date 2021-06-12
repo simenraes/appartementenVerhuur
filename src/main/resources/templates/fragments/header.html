@@ -9,19 +9,20 @@
 <body>
 <header>
     <div th:fragment="header">
-        <div class="text-center mb-5 mt-5 font-weight-bold">
-            <p class="TitleHome">appartementenverhuur</p>
-        </div>
+<!--        <div class="text-center mb-5 mt-5 font-weight-bold">-->
+<!--&lt;!&ndash;            <p class="TitleHome">appartementenverhuur</p>&ndash;&gt;-->
+<!--        </div>-->
         <div class="nav">
+            <h1>Appartementenverhuur</h1>
 
 
-            <div class="navbar-dark">
-                <ul>
-                    <li class="active"><a class="nav-button" th:href="@{/}">home</a></li>
-                    <li><a class="nav-button" th:href="@{/appartementenlijst}">appartementen</a></li>
-                    <li><a class="nav-button" th:href="@{/boekingen}">boekingen</a></li>
+            <div class="navbuttons">
 
-                </ul>
+                    <a class="buttonLook menuButton" th:href="@{/}">home</a></li>
+                    <a class="buttonLook menuButton" th:href="@{/appartementenlijst}">appartementen</a></li>
+                    <a class="buttonLook menuButton" th:href="@{/boekingen}">boekingen</a></li>
+
+
             </div>
         </div>
         <div class="freespaceforheader"></div>
