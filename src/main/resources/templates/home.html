@@ -15,10 +15,17 @@
 
 
 <div class="row1">
+
+        <h2 th:if="${loginName!=null}" th:text="|Hello ${loginName}|" class="hello">hello</h2>
+        <div class="logButton">
+            <a th:if="${loginName!=null}" th:href="@{|/logout|}" >logout</a>
+            <a th:if="${loginName==null}" th:href="@{|/login|}" >login</a>
+        </div>
     <img th:src="@{/css/img/app1.png}" src="../static/css/img/app1.png" alt="Appartement" height="840"
          width="1583"/>
 
 </div>
+
 
 
 
