@@ -82,7 +82,7 @@
 
 </div>
 <div class="editButton">
-    <a th:href="@{|/admin/appartementedit/${appartement.id}|}" >editapp</a>
+    <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/appartementedit/${appartement.id}|}" >editapp</a>
 </div>
 
 

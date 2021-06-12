@@ -1,0 +1,26 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+</head>
+<body class="LoginlogoutBody">
+<div class="container-fluid">
+  <div class="text-center text-Danger mb-5 mt-5 font-weight-bold">
+    <p class="TitleLoginLogout">LOGOUT MASTERMIND</p>
+  </div>
+
+  <div class="text-center">
+    <form th:action="@{/logout}" method="post">
+      <h2 class="mt-4">Bent u zeker dat u wilt uitloggen?</h2>
+      <input class="btn btn-primary text-white text-center" type="submit" value="Uitloggen"/>
+      <a th:href="@{/}" class="btn btn-primary text-white text-center">Annuleren</a>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>

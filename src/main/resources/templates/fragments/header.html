@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../../static/css/style.css"/>
@@ -13,6 +15,7 @@
             <p class="TitleHome">appartementenverhuur</p>
         </div>
         <div class="nav">
+            <div sec:authentication="name" sec:authorize="isAuthenticated()" class="hello"></div>
 
 
             <div class="navbar-dark">
@@ -20,6 +23,10 @@
                     <li class="active"><a class="nav-button" th:href="@{/}">home</a></li>
                     <li><a class="nav-button" th:href="@{/appartementenlijst}">appartementen</a></li>
                     <li><a class="nav-button" th:href="@{/boekingen}">boekingen</a></li>
+                    <li><a sec:authorize="isAuthenticated()" th:href="@{|/logout|}"
+                        class="nav-button">logout</a></li>
+                    <li><a sec:authorize="!isAuthenticated()" th:href="@{|/login|}"
+                        class="buttonLook menuButton authButton">login</a></li>
 
                 </ul>
             </div>

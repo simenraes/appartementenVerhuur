@@ -1,0 +1,45 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<body class="LoginlogoutBody">
+<div class="container-fluid">
+
+  <div class="text-center mb-5 mt-5 font-weight-bold">
+    <p class="TitleLoginLogout">LOGIN MASTERMIND</p>
+  </div>
+
+
+  <form class="mt-5" th:action="@{/login}" method="post">
+
+    <div class="form-group">
+      <label for="name">
+        <h2>Gebruikersnaam</h2>
+        <input type="text" id="name" name="username" class="form-control"
+               placeholder="Gebruikersnaam">
+      </label>
+    </div>
+
+    <div class="text-center errorMessageLogin" th:if="${param.error!=null}">
+      <h4>Gebruikersnaam of wachtwoord is niet correct!</h4>
+    </div>
+
+    <div class="form-group">
+      <label for="password">
+        <h2>Wachtwoord</h2>
+        <input type="password" id="password" name="password" class="form-control"
+               placeholder="Wachtwoord">
+      </label>
+    </div>
+
+    <button class="btn btn-primary text-white text-center"><h3>Aanmelden</h3></button>
+  </form>
+</div>
+
+</body>
+</html>

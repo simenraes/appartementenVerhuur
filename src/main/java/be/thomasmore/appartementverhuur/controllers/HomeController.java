@@ -18,7 +18,7 @@ public class HomeController {
 
     @GetMapping({"/", "/home"})
     public String home(Model model, Principal principal) {
-        final String loginName = (principal !=null)? principal.getName() : "SIMEN";
+        final String loginName = (principal !=null)? principal.getName() : "NOBODY";
         logger.info("homelogged in" +loginName);
         model.addAttribute("loginName", loginName);
 
