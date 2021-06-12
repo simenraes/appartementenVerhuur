@@ -47,7 +47,15 @@ a {
 /*navigation buttons in header*/
 
 
-
+.bottom {
+    background-color: cornflowerblue;
+    color: #EDC7CF;
+    height: 30px;
+    font-size: 0.7em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 
 .bottom p {
     text-align: center;
