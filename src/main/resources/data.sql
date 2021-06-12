@@ -36,3 +36,15 @@ insert into Boeking (
     ID, START_DATUM, EIND_DATUM, NUM_DAYS, NUM_GUESTS, APPARTEMENT_ID)
 values (
            (nextval('BOEKING_SEQ')), '2021-09-3', '2021-10-25', 22, 4, 3);
+
+insert into USER (
+    ID, USERNAME, PASSWORD,EMAIL, ROLE)
+values (
+           (nextval('USER_SEQ')),'admin', '$2a$10$9MIX8kYPkuB7uE/H5nHF8.KG6.YdjBA/voOnjSZnZDxLXL/2BIerS',
+           'simen@hotmail.be','ADMIN');
+
+insert into USER (
+    ID, USERNAME, PASSWORD,EMAIL, ROLE)
+values (
+           (nextval('USER_SEQ')),'simen', '$2a$10$pQnldtWyD5CpMBjWJycMW.jmEOY2zKqjSkCo5V2vKqvW44ORrdpAa','simen@hotmail.be','USER');
+
