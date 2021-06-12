@@ -47,9 +47,9 @@ a {
 /*navigation buttons in header*/
 
 
-.bottom {
+.nav {
     background-color: cornflowerblue;
-    color: #EDC7CF;
+    color: white;
     height: 30px;
     font-size: 0.7em;
     position: fixed;
