@@ -334,27 +334,6 @@ input.infoLineValue, select.infoLineValue, textarea.infoLineValue {
 
 
 
-/*.filterCapacity{*/
-/*    width: 2em;*/
-/*}*/
-
-
-/*.submitButton{*/
-/*    text-decoration: none;*/
-/*    color: white;*/
-/*}*/
-
-/** {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    font-family: "Century Gothic", sans-serif;*/
-/*    font-size: large;*/
-/*}*/
-
-/*header{*/
-/*    background-image: url("/img/appartement.jpg") ;*/
-/*    height: 100vh;*/
-/*}*/
 .row1 img {
     width: 100%;
     height: auto;
@@ -381,9 +360,9 @@ input.infoLineValue, select.infoLineValue, textarea.infoLineValue {
     background-color: cornflowerblue;
 }
 .appartementDetailsTekst{
-/*display: flex;*/
+    /*display: flex;*/
 
-margin: 10px;
+    margin: 10px;
     text-align: center;
 }
 .appartementinfo{
@@ -464,7 +443,7 @@ body {
     width: 5em;
     display: inline-block;
     position: absolute;
-margin-left: 50px;
+    margin-left: 50px;
 
 }
 .cancelButton{
@@ -480,7 +459,7 @@ margin-left: 50px;
 
 }
 .cancelButton:hover{
-   background-color: firebrick;
+    background-color: firebrick;
 
 }
 .editButton:hover{
@@ -557,7 +536,7 @@ h1 {
     height: 150px;
 }
 .navbuttons {
-display: flex;
+    display: flex;
 }
 ul li {
     display: inline-block;
