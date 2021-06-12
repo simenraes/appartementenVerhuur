@@ -14,7 +14,7 @@ insert into Appartement (
     ID, CAPACITY, APPARTEMENT_NAAM, STAD, IS_PARKING_BESCHIKBAAR, AFSTAND_TOT_CENTRUM, EXTRA_INFO, PRIJS_PER_MAAND,
     AANTAL_SLAAPKAMERS, OPPERVLAKTE, HUISDIEREN_TOEGELATEN)
 values (
-           (nextval('APPARTEMENT_SEQ')), 2, 'testnaam2', 'Antwerpen', true, 30, 'info', 500, 2, 30, false);
+           (nextval('APPARTEMENT_SEQ')), 4, 'testnaam2', 'Antwerpen', true, 30, 'info', 500, 2, 30, false);
 
 insert into Appartement (
     ID, CAPACITY, APPARTEMENT_NAAM, STAD, IS_PARKING_BESCHIKBAAR, AFSTAND_TOT_CENTRUM, EXTRA_INFO, PRIJS_PER_MAAND,
