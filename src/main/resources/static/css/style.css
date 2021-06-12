@@ -47,15 +47,7 @@ a {
 /*navigation buttons in header*/
 
 
-.bottom {
-    background-color: #6A8E7F;
-    color: #EDC7CF;
-    height: 30px;
-    font-size: 0.7em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+
 
 .bottom p {
     text-align: center;
