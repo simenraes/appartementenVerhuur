@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+
+  <link rel="stylesheet" th:href="@{css/bootstrap.css}" href="/../static/css/bootstrap.css">
+
+
+  <title>Title</title>
+</head>
+
+<body class="ErrorPageBody">
+<div class="container-fluid ">
+  <div class="textOfErrorPage text-center">
+    <p class="ErrorPage1steLijn">Error 404</p>
+    <p class="ErrorPage2deLijn">Oeps, er ging iets verkeerd <br> ga terug naar het begin</p>
+  </div>
+  <div class="text-center mt-3">
+    <a class="btn btn-primary text-white" th:href="@{/}">home</a>
+  </div>
+</div>
+
+</body>
+</html>

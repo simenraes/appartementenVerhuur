@@ -2,62 +2,72 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../admin/static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"
+          href="../admin/static/css/style.css"/>
 
     <title>Title</title>
 </head>
 <body>
+<div th:replace="fragments/header :: header">Header</div>
+
 <form th:object="${boeking}" th:action="@{|/admin/boekingnew|}" method="post">
-    <div class="venueinfo">
-<!--        <div class="infoLine">-->
-<!--            <label for="appartementNaam" class="infoLineName">id van app: </label>-->
-<!--            <input id="appartementNaam" th:field="*{appartement.id}" class="infoLineValue">-->
-<!--        </div>-->
+    <div class="appartementinfo">
+        <!--        <div class="infoLine">-->
+        <!--            <label for="appartementNaam" class="infoLineName">id van app: </label>-->
+        <!--            <input id="appartementNaam" th:field="*{appartement.id}" class="infoLineValue">-->
+        <!--        </div>-->
         <div class="infoLine">
             <label for="numGuests" class="infoLineName">aantal gasten: </label>
             <input id="numGuests" th:field="*{numGuests}" class="infoLineValue">
         </div>
 
         <div class="infoLine">
-            <label for="startDatum" class="infoLineName">startdatum <i>(yyyy-mm-dd)</i>:  </label>
+            <label for="startDatum" class="infoLineName">startdatum <i>(yyyy-mm-dd)</i>: </label>
             <input id="startDatum" th:field="*{startDatum}" class="infoLineValue">
 
         </div>
         <div class="infoLine">
-            <label for="eindDatum" class="infoLineName">eindDatum <i>(yyyy-mm-dd)</i>:  </label>
+            <label for="eindDatum" class="infoLineName">eindDatum <i>(yyyy-mm-dd)</i>: </label>
             <input id="eindDatum" th:field="*{eindDatum}" class="infoLineValue">
 
         </div>
         <div class="infoLine">
-            <label for="appartementId" class="infoLineName">appartementid </label>
-            <input id="appartementId"  th:field="*{appartement.id}" class="infoLineValue">
+            <label for="numDays" class="infoLineName">aantal gasten </label>
+            <input id="numDays" th:field="*{numGuests}" class="infoLineValue">
         </div>
         <div class="infoLine">
-            <label for="numDays" class="infoLineName">appartementid </label>
-            <input id="numDays"  th:field="*{numGuests}" class="infoLineValue">
+            <label for="appartementId" class="infoLineName">appartementid </label>
+            <input id="appartementId" th:field="*{appartement.id}" class="infoLineValue">
+        </div>
+        <div class="infoLine">
+            <a th:href="@{|/admin/boekingnew|}" class="cancelButton">cancel</a>
+            <input type="submit" value="save" class="editButton">
         </div>
     </div>
-    <div class="infoLine">
-        <a th:href="@{|/appartementdetails/*{id}|}" class="buttonLook editButton">cancel</a>
-        <input type="submit" value="save" class="buttonLook editButton">
-    </div>
-<!--    <input type="text" th:field="*{lastName}" required/>-->
-<!--    <label>First Name</label>-->
-<!--    <input type="text" th:field="*{firstName}" required/>-->
-<!--    <label>Number of guests</label>-->
-<!--    <input type="number" min="1" th:field="*{numGuests}"/>-->
-<!--    <label ><i>(yyyy-mm-dd)</i>>:</label>-->
-<!--    <input type="date" th:field="*{startDatum}"  required/>-->
-<!--    <label>Number of days</label>-->
-<!--    <input type="number" min="1" th:field="*{numDays}"/>-->
-<!--    <label>Number of days</label>-->
-<!--    <input type="date" min="1" th:field="*{eindDatum}"/>-->
-<!--    <label>appartementNaam</label>-->
-<!--    <input type="text" th:field="*{appartement.appartementNaam}"/>-->
-<!--    <input type="submit" value="Add"/>-->
-<!--&lt;!&ndash;    <p th:if="${noApartmentAvailable == true}">&ndash;&gt;-->
-<!--&lt;!&ndash;        No apartment available for the selection criteria&ndash;&gt;-->
-<!--    </p>-->
+
+<!--        <div class="infoLine">-->
+<!--            <a th:href="@{|/appartementdetails/*{id}|}" class="cancelButton">cancel</a>-->
+<!--            <input type="submit" value="save" class="editButton">-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <!--    <input type="text" th:field="*{lastName}" required/>-->
+    <!--    <label>First Name</label>-->
+    <!--    <input type="text" th:field="*{firstName}" required/>-->
+    <!--    <label>Number of guests</label>-->
+    <!--    <input type="number" min="1" th:field="*{numGuests}"/>-->
+    <!--    <label ><i>(yyyy-mm-dd)</i>>:</label>-->
+    <!--    <input type="date" th:field="*{startDatum}"  required/>-->
+    <!--    <label>Number of days</label>-->
+    <!--    <input type="number" min="1" th:field="*{numDays}"/>-->
+    <!--    <label>Number of days</label>-->
+    <!--    <input type="date" min="1" th:field="*{eindDatum}"/>-->
+    <!--    <label>appartementNaam</label>-->
+    <!--    <input type="text" th:field="*{appartement.appartementNaam}"/>-->
+    <!--    <input type="submit" value="Add"/>-->
+    <!--&lt;!&ndash;    <p th:if="${noApartmentAvailable == true}">&ndash;&gt;-->
+    <!--&lt;!&ndash;        No apartment available for the selection criteria&ndash;&gt;-->
+    <!--    </p>-->
 </form>
 <!--<table border="1">-->
 <!--    <thead>-->

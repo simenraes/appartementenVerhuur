@@ -472,6 +472,9 @@ body {
     font-weight: bolder;
     margin-bottom: 5px;
 }
+.infoLineValue{
+    margin-bottom: 5px;
+}
 
 .detailscontent {
     text-align: center;
@@ -495,7 +498,9 @@ body {
     border-width: 0;
     width: 5em;
     display: inline-block;
-    margin-bottom: 200px;
+    position: absolute;
+margin-left: 50px;
+
 }
 .cancelButton{
     font-size: 1.2em;
@@ -549,4 +554,23 @@ body {
 .h2Boekingen{
     text-align: center;
 
+}
+/*ERROR PAGE CSS*/
+
+.ErrorPageBody{
+    background: url("/static/css/img/app1error.png");
+    width: 100%;
+}
+.textOfErrorPage{
+    padding-top: 100px;
+}
+
+.ErrorPage1steLijn{
+    font-size: 100px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.ErrorPage2deLijn {
+    font-size: 80px;
 }

@@ -8,6 +8,9 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header">Header</div>
+<div class="editButton">
+    <a th:href="@{|/admin/boekingnew|}" class="buttonLook smallButton">boek dit appartement</a>
+</div>
 <div class="details">
 
     <div class="detailscontent" th:if="${appartement}">
@@ -95,13 +98,9 @@
         </div>
     </div>
 </div>
-<div class="editButtonDiv">
-    <a th:href="@{|/admin/appartementedit/${appartement.id}|}" class="buttonLook smallButton">editapp</a>
-</div>
 
-<!--<div class="editButtonDiv">-->
-<!--    <a th:href="@{|/admin/boekingnew}" class="buttonLook smallButton">new</a>-->
-<!--</div>-->
+
+
 
 
 </body>
