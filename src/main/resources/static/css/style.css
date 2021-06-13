@@ -187,8 +187,11 @@ body {
     color: #c69500;
 }
 .hello{
-    position: absolute;
+
     float: right;
+   font-size: x-large;
+    color: white;
+    margin-right: 10px;
 }
 .LoginlogoutBody{
     font-family: "Roboto Light", sans-serif;

@@ -4,23 +4,30 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"
+          href="static/css/style.css"/>
     <title>Logout</title>
 </head>
-<body class="LoginlogoutBody">
-<div class="container-fluid">
-  <div class="text-center text-Danger mb-5 mt-5 font-weight-bold">
-    <p class="TitleLoginLogout">LOGOUT Appartementenverhuur</p>
-  </div>
+<body class="loginBody">
+<div class="loginMain">
+    <p class="sign">Log out</p>
+    <form class="loginForm1" th:action="@{|/user/logout|}" method="post">
+        <h2 class="h2Login"> bent u zeker dat u wilt uitloggen?</h2>
 
-  <div class="text-center">
-    <form th:action="@{|/user/logout|}" method="post">
-      <h2 class="mt-4">Bent u zeker dat u wilt uitloggen?</h2>
-      <input class="btn btn-primary text-white text-center" type="submit" value="Uitloggen"/>
-      <a th:href="@{/}" class="btn btn-primary text-white text-center">Annuleren</a>
+
+        <button class="submit">Log uit</button>
+
     </form>
-  </div>
+
+
+    <button class="submitRegistreer">
+        <a th:href="@{/home}">cancel</a>
+
+    </button>
+
 
 </div>
 
 </body>
+
 </html>
