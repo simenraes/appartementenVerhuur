@@ -22,6 +22,10 @@ public class HomeController {
 
         return "home";
     }
+    @GetMapping("/galerij")
+    public String galerij(Model model){
+        return "galerij";
+    }
 
 //   @GetMapping({"/appartementdetails","/appartementdetails/{appartementNaam}"})
 //    public String details(Model model,
@@ -29,6 +33,5 @@ public class HomeController {
 //        model.addAttribute("appartementNaam", (appartementNaam!=null) ? appartementNaam : "geen appartement gekozen");
 //        return "appartementdetails";
 //   }
-
 
 }

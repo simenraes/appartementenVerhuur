@@ -194,21 +194,3 @@ body {
     background: url("/img/app1.png");
     text-align: center;
 }
-.carousel-item{
-    height: 32em;
-    background-color: white;
-    position: absolute;
-
-}
-.container {
-    position: absolute;
-    text-align: center;
-    color: white;
-    width: 100%;
-}
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
