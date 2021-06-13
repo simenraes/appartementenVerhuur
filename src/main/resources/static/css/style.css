@@ -223,14 +223,14 @@ body {
 .loginMain {
     background-color: #FFFFFF;
     width: 400px;
-    height: 400px;
+    height: 430px;
     margin: 7em auto;
     border-radius: 1.5em;
     box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
 .sign {
-    padding-top: 40px;
+    padding-top: 20px;
     color: #8C55AA;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
@@ -238,7 +238,7 @@ body {
     text-align: center;
 }
 
-.un {
+.un, .email {
     width: 76%;
     color: rgb(38, 50, 56);
     font-weight: 700;
@@ -291,13 +291,14 @@ form.loginForm1 {
     cursor: pointer;
     border-radius: 5em;
     color: #fff;
-    background: linear-gradient(to right, #9C27B0, #E040FB);
+    background: linear-gradient(to right, cornflowerblue, cornflowerblue);
     border: 0;
     padding: 10px 20px;
-    font-family: 'Ubuntu', sans-serif;
+    /*font-family: 'Ubuntu', sans-serif;*/
     margin-left: 35%;
-    font-size: 13px;
+    font-size: 16px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    font-weight: bold;
 }
 
 .h2Login {
@@ -307,7 +308,7 @@ form.loginForm1 {
     cursor: pointer;
     border-radius: 5em;
     color: #fff;
-    background: linear-gradient(to right, #9C27B0, #E040FB);
+    background: linear-gradient(to right, cornflowerblue, cornflowerblue);
     border: 0;
     padding: 10px 20px;
     font-family: 'Ubuntu', sans-serif;

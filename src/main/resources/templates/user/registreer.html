@@ -1,77 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"
           href="static/css/style.css"/>
-    <link rel="stylesheet" th:href="@{css/bootstrap.css}" href="/../static/css/bootstrap.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <title>Title</title>
+
+    <title>Regsitreer</title>
 </head>
 
-<body class="registerbody">
-<div class="container-fluid">
+<body class="loginBody">
+<div class="loginMain">
+    <p class="sign">Registreer</p>
+    <form class="loginForm1" th:action="@{|/user/registreer|}" method="post">
+        <label for="name">
+            <h2 class="h2Login">Gebruikersnaam</h2>
+            <input type="text" id="name" name="username" class="un"
+                   placeholder="Gebruikersnaam">
+        </label>
 
-    <div class="text-center text-Danger mb-5 mt-5 font-weight-bold">
-        <p class="TitleLoginLogout">REGISTREREN</p>
-    </div>
+        <label for="email">
+            <h2 class="h2Login">Email</h2>
+            <input type="email" id="email" name="email" class="email"
+                   placeholder="vb@example.com">
+        </label>
 
-    <div class="text-center registerMargins">
-        <div class="infoLine">
-            <a th:href="@{|/login|}" class="linklook">Login</a>&nbsp;indien je reeds een account hebt.
-        </div>
-    </div>
+        <label for="password">
+            <h2 class="h2Login">Wachtwoord</h2>
+            <input type="password" id="password" name="password" class="pass"
+                   placeholder="Wachtwoord">
+        </label>
 
-    <div class="row pb-5">
-        <div class="col mt-5 text-center">
-            <form th:action="@{|/user/registreer|}" method="post">
 
-                <form action="" method="post" class="register-form">
+        <button class="submit">registreer</button>
 
-                    <div class="form-group">
+    </form>
 
-                        <label for="username">
-                            <h3>Gebruikersnaam</h3>
-                            <input id="username" name="username" class="form-control" type="text"
-                                   placeholder="Gebruikersnaam">
-                        </label>
-                    </div>
+    <button class="submitRegistreer">
+        <a th:href="@{|/user/login|}">cancel</a>
 
-                    <div class="form-group">
-
-                        <label for="password">
-                            <h3>Wachtwoord</h3>
-                            <input id="password" name="password" class="form-control" type="password"
-                                   placeholder="Wachtwoord">
-                        </label>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">
-                            <h3>Email</h3>
-                            <input id="email" name="email" class="form-control" type="email"
-                                   placeholder="voorbeeld@hotmail.com">
-                        </label>
-                    </div>
-
-                    <div class="text-center registerMargins">
-                        <button class="btn btn-success"><h4>Voltooi</h4></button>
-
-                    </div>
-
-                    <div class="text-center registerMargins">
-                        <button th:href="@{|/home|}" class="btn btn-danger"><h4>Cancel</h4></button>
-                    </div>
-
-                </form>
-            </form>
-        </div>
-    </div>
+    </button>
 
 
 </div>
 
-
 </body>
+
+<!--<body class="registerbody">-->
+<!--<div class="container-fluid">-->
+
+<!--    <div class="text-center text-Danger mb-5 mt-5 font-weight-bold">-->
+<!--        <p class="TitleLoginLogout">REGISTREREN</p>-->
+<!--    </div>-->
+
+<!--    <div class="text-center registerMargins">-->
+<!--        <div class="infoLine">-->
+<!--            <a th:href="@{|/login|}" class="linklook">Login</a>&nbsp;indien je reeds een account hebt.-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="row pb-5">-->
+<!--        <div class="col mt-5 text-center">-->
+<!--            <form th:action="@{|/user/registreer|}" method="post">-->
+
+<!--                <form action="" method="post" class="register-form">-->
+
+<!--                    <div class="form-group">-->
+
+<!--                        <label for="username">-->
+<!--                            <h3>Gebruikersnaam</h3>-->
+<!--                            <input id="username" name="username" class="form-control" type="text"-->
+<!--                                   placeholder="Gebruikersnaam">-->
+<!--                        </label>-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+
+<!--                        <label for="password">-->
+<!--                            <h3>Wachtwoord</h3>-->
+<!--                            <input id="password" name="password" class="form-control" type="password"-->
+<!--                                   placeholder="Wachtwoord">-->
+<!--                        </label>-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+<!--                        <label for="email">-->
+<!--                            <h3>Email</h3>-->
+<!--                            <input id="email" name="email" class="form-control" type="email"-->
+<!--                                   placeholder="voorbeeld@hotmail.com">-->
+<!--                        </label>-->
+<!--                    </div>-->
+
+<!--                    <div class="text-center registerMargins">-->
+<!--                        <button class="btn btn-success"><h4>Voltooi</h4></button>-->
+
+<!--                    </div>-->
+<!--                    <div class="text-center registerMargins">-->
+<!--                        <button th:href="@{|/home|}" class="btn btn-danger"><h4>Cancel</h4></button>-->
+<!--                    </div>-->
+
+
+<!--                </form>-->
+<!--            </form>-->
+
+<!--        </div>-->
+<!--    </div>-->
+
+
+<!--</div>-->
+
+
 </html>

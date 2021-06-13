@@ -47,11 +47,11 @@ public class UserController {
                                @RequestParam String username,
                                @RequestParam String password,
                                @RequestParam String email) {
-        if (principal != null) return "redirect:/appartementenlijst";
-        if (username == null || username.isBlank()) return "redirect:/appartementenlijst";// kan niet redirecten naar
-        // register ?
+        if (principal != null) return "redirect:/home";
+        if (username == null || username.isBlank()) return "redirect:/home";
+
         Optional<User> optionalUser = userRepository.findByUsername(username);
-        if (optionalUser.isPresent()) return "redirect:/appartementenlijst";
+        if (optionalUser.isPresent()) return "redirect:/home";
 
         User newUser = new User();
         newUser.setUsername(username);
@@ -64,7 +64,7 @@ public class UserController {
 
         autologin(username, password);
 
-        return "redirect:/appartementenlijst";
+        return "redirect:/home";
     }
 
     private void autologin(String userName, String password) {
