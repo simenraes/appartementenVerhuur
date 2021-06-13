@@ -33,6 +33,7 @@ public class Boeking {
 
 
 
+
     public Boeking() {
     }
 
@@ -43,6 +44,7 @@ public class Boeking {
         this.appartement = appartement;
         this.numDays = numDays;
         this.numGuests = numGuests;
+
     }
 
     public Integer getId() {
@@ -92,4 +94,6 @@ public class Boeking {
     public void setNumGuests(Integer numGuests) {
         this.numGuests = numGuests;
     }
+
+
 }

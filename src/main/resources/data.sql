@@ -48,3 +48,14 @@ insert into USER (
 values (
            (nextval('USER_SEQ')),'simen', '$2a$10$pQnldtWyD5CpMBjWJycMW.jmEOY2zKqjSkCo5V2vKqvW44ORrdpAa','simen@hotmail.be','USER');
 
+insert into USER (
+    ID, USERNAME, PASSWORD,EMAIL, ROLE)
+values (
+           (nextval('USER_SEQ')),'stijn', '$2a$10$9MIX8kYPkuB7uE/H5nHF8.KG6.YdjBA/voOnjSZnZDxLXL/2BIerS',
+           'stijn@hotmail.be','USER');
+
+insert into USER (
+    ID, USERNAME, PASSWORD,EMAIL, ROLE)
+values (
+           (nextval('USER_SEQ')),'bob', '$2a$10$pQnldtWyD5CpMBjWJycMW.jmEOY2zKqjSkCo5V2vKqvW44ORrdpAa','bob@hotmail' ||
+                                                                                                       '.be','USER');
