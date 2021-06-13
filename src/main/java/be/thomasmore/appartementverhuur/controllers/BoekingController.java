@@ -55,8 +55,8 @@ public class BoekingController {
         if (optionalBoeking.isPresent()) {
             long nrOfBoekingen = boekingRepository.count();
             model.addAttribute("boeking", (optionalBoeking.get()));
-            model.addAttribute("prevId", id > 1 ? id - 1 : nrOfBoekingen);
-            model.addAttribute("nextId", id < nrOfBoekingen ? id + 1 : 1);
+//            model.addAttribute("prevId", id > 1 ? id - 1 : nrOfBoekingen);
+//            model.addAttribute("nextId", id < nrOfBoekingen ? id + 1 : 1);
             model.addAttribute("appartementen", appartementen);
 
 

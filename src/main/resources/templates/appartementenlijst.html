@@ -80,7 +80,7 @@
         </div>
     </div>
 </div>
-<div  class="editButton">
+<div sec:authorize="hasAuthority('ADMIN')"  class="editButton">
     <a sec:authorize="hasAuthority('ADMIN')"  th:href="@{|/admin/appartementnew|}" >newApp</a>
 </div>
 

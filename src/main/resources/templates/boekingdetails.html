@@ -15,44 +15,44 @@
 
     <div class="row1content" th:if="${boeking}">
 
-        <div class="prevAppButton">
-            <a  th:href="@{|/boekingdetails/${prevId}|}">&lt;</a>
-        </div>
-        <div class="nextAppButton">
-            <a  th:href="@{|/boekingdetails/${nextId}|}">&gt;</a>
-        </div>
+<!--        <div class="prevAppButton">-->
+<!--            <a  th:href="@{|/boekingdetails/${prevId}|}">&lt;</a>-->
+<!--        </div>-->
+<!--        <div class="nextAppButton">-->
+<!--            <a  th:href="@{|/boekingdetails/${nextId}|}">&gt;</a>-->
+<!--        </div>-->
 
-<!--        <h2 th:text="|appartement: ${appartement.appartementNaam}|">appartementdetails</h2>-->
+
 
         <div class="appartementinfo">
             <div class="infoLine">
-                <div class="infoLineName">id boeking:</div>
-                <div class="infoLineValue">
+                <div class="grootheid">id boeking:</div>
+                <div class="eenheid">
                     <a th:text="${boeking.id}" class="linkLook" target="_blank">
                         id</a>
                 </div>
             </div>
             <div class="infoLine">
-                <div class="infoLineName">naam van appartement:</div>
-                <div class="infoLineValue" th:text="${boeking.appartement.appartementNaam}">appartementNaam</div>
+                <div class="grootheid">naam van appartement:</div>
+                <div class="eenheid" th:text="${boeking.appartement.appartementNaam}">appartementNaam</div>
             </div>
             <div class="infoLine">
-                <div class="infoLineName">aantal dagen:</div>
-                <div class="infoLineValue" th:text="|${boeking.getNumDays()} dagen|">aantal dagen</div>
+                <div class="grootheid">aantal dagen:</div>
+                <div class="eenheid" th:text="|${boeking.getNumDays()} dagen|">aantal dagen</div>
             </div>
             <div class="infoLine">
-                <div class="infoLineName">van:</div>
-                <div class="infoLineValue" th:text="${boeking.startDatum}">
+                <div class="grootheid">van:</div>
+                <div class="eenheid" th:text="${boeking.startDatum}">
                     startDatum
                 </div>
             </div>
             <div class="infoLine">
-                <div class="infoLineName">tot:</div>
-                <div class="infoLineValue" th:text="${boeking.eindDatum}">tot</div>
+                <div class="grootheid">tot:</div>
+                <div class="eenheid" th:text="${boeking.eindDatum}">tot</div>
             </div>
             <div class="infoLine">
-                <div class="infoLineName">aantal gasten</div>
-                <div class="infoLineValue" th:text="|${boeking.numGuests} gasten|">aantalgasten</div>
+                <div class="grootheid">aantal gasten</div>
+                <div class="eenheid" th:text="|${boeking.numGuests} gasten|">aantalgasten</div>
             </div>
 
 

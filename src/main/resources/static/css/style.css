@@ -66,6 +66,7 @@ ul li a:hover {
     font-size: 1.2em;
     padding: 1em;
     background-color: #002752;
+    border-radius: 70%;
 }
 .gevondenAppartementButton:hover{
     background-color: cornflowerblue;
@@ -112,6 +113,7 @@ body {
 .infoLineName{
     font-weight: bolder;
     margin-bottom: 5px;
+    font-size: large;
 }
 .detailscontent {
     text-align: center;
@@ -158,9 +160,9 @@ body {
     text-align: center;
 }
 body {
-    background-color: #b3d7ff;
+    background-color: lightgray;
     color: #4c6c5d;
-    font-family: Bahnschrift, sans-serif;
+    /*font-family: Bahnschrift, sans-serif;*/
     margin: 0;
 }
 .overlay {
@@ -194,3 +196,111 @@ body {
     background: url("/img/app1.png");
     text-align: center;
 }
+.h1AppNaam{
+    font-size: xxx-large;
+}
+.grootheid{
+    font-weight: bolder;
+    margin-bottom: 5px;
+
+    color: black;
+    font-size: x-large;
+}
+.eenheid{
+    color: darkorange;
+    font-weight: bold;
+}
+.h1Boekingen{
+    font-size: xxx-large;
+    text-align: center;
+}
+/*LOGIN CSS FINAL*/
+.loginBody {
+    background-color: lightgray;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.loginMain {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 400px;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+    padding-top: 40px;
+    color: #8C55AA;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    text-align: center;
+}
+
+.un {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+form.loginForm1 {
+    padding-top: 40px;
+}
+
+.pass {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.un:focus, .pass:focus {
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+
+}
+
+.submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+    border: 0;
+    padding: 10px 40px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.h2Login {
+    text-align: center;
+}
+

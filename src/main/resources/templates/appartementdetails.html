@@ -10,9 +10,7 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header">Header</div>
-<div class="editButton">
-    <a th:href="@{/boekingnew}" class="buttonLook smallButton">boek dit appartement</a>
-</div>
+
 <div class="details">
 
     <div class="detailscontent" th:if="${appartement}">
@@ -24,64 +22,67 @@
             <a class="buttonLook smallButton" th:href="@{|/appartementdetails/${nextId}|}">&gt;</a>
         </div>
 
-        <h2 th:text="|appartement: ${appartement.appartementNaam}|">appartementdetails</h2>
+        <h1 class="h1AppNaam" th:text="|appartement: ${appartement.appartementNaam}|">appartementdetails</h1>
 
         <div class="appartementinfo">
             <div class="appartementDetailsTekst">
-                <div class="infoLineName">info:</div>
-                <div class="infoLineValue">
+                <div class="grootheid">info:</div>
+                <div class="eenheid">
                     <a th:text="${appartement.extraInfo}" class="linkLook" target="_blank">
                         info</a>
                 </div>
             </div>
 
             <div class="appartementDetailsTekst">
-                <div class="infoLineName">capaciteit:</div>
-                <div class="infoLineValue" th:text="| max ${appartement.capacity} personen|">max aantal personen</div>
+                <div class="grootheid">capaciteit:</div>
+                <div class="eenheid" th:text="| max ${appartement.capacity} personen|">max aantal personen</div>
             </div>
             <div class="appartementDetailsTekst">
-                <div class="infoLineName">parking beschikbaar?</div>
-                <div class="infoLineValue" th:text="${appartement.isIsParkingBeschikbaar() ? 'yes' : 'no'}">
+                <div class="grootheid">parking beschikbaar?</div>
+                <div class="eenheid" th:text="${appartement.isIsParkingBeschikbaar() ? 'yes' : 'no'}">
                     isParkingBeschikbaar
                 </div>
             </div>
             <div class="appartementDetailsTekst">
-                <div class="infoLineName">stad:</div>
-                <div class="infoLineValue" th:text="${appartement.stad}">stad</div>
+                <div class="grootheid">stad:</div>
+                <div class="eenheid" th:text="${appartement.stad}">stad</div>
             </div>
             <div class="appartementDetailsTekst">
-                <div class="infoLineName">afstand tot het centrum:</div>
-                <div class="infoLineValue" th:text="|${appartement.afstandTotCentrum} km|">afstandTotCentrum</div>
-            </div>
-
-            <div class="appartementDetailsTekst">
-                <div class="infoLineName">prijs per maand:</div>
-                <div class="infoLineValue" th:text="|${appartement.prijsPerMaand} euro|">prijsPerMaand</div>
+                <div class="grootheid">afstand tot het centrum:</div>
+                <div class="eenheid" th:text="|${appartement.afstandTotCentrum} km|">afstandTotCentrum</div>
             </div>
 
             <div class="appartementDetailsTekst">
-                <div class="infoLineName">aantal slaapkamers:</div>
-                <div class="infoLineValue" th:text="${appartement.aantalSlaapkamers}">aantal slaapkamers</div>
+                <div class="grootheid">prijs per maand:</div>
+                <div class="eenheid" th:text="|${appartement.prijsPerMaand} euro|">prijsPerMaand</div>
+            </div>
+
+            <div class="appartementDetailsTekst">
+                <div class="grootheid">aantal slaapkamers:</div>
+                <div class="eenheid" th:text="${appartement.aantalSlaapkamers}">aantal slaapkamers</div>
             </div>
             <div class="appartementDetailsTekst">
-                <div class="infoLineName">huisdieren toegelaten?</div>
-                <div class="infoLineValue" th:text="${appartement.isHuisdierenToegelaten() ? 'yes' : 'no'}">
+                <div class="grootheid">huisdieren toegelaten?</div>
+                <div class="eenheid" th:text="${appartement.isHuisdierenToegelaten() ? 'yes' : 'no'}">
                     huisdierenToegelaten
                 </div>
             </div>
 
             <div class="appartementDetailsTekst">
-                <div class="infoLineName">oppervlakte:</div>
-                <div class="infoLineValue" th:text="|${appartement.oppervlakte} vierkante meter|">oppervlakte</div>
+                <div class="grootheid">oppervlakte:</div>
+                <div class="eenheid" th:text="|${appartement.oppervlakte} vierkante meter|">oppervlakte</div>
             </div>
         </div>
+    </div>
+    <div class="editButton">
+        <a th:href="@{/boekingnew}" class="buttonLook smallButton">boek dit appartement</a>
     </div>
     <div class="row1content" th:unless="${appartement}">
         <p>geen appartement gekozen</p>
     </div>
 
 </div>
-<div class="editButton">
+<div sec:authorize="hasAuthority('ADMIN')" class="editButton">
     <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/appartementedit/${appartement.id}|}" >editapp</a>
 </div>
 

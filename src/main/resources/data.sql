@@ -25,7 +25,7 @@ values (
 insert into Boeking (
     ID, START_DATUM, EIND_DATUM, NUM_DAYS, NUM_GUESTS, APPARTEMENT_ID)
 values (
-           (nextval('BOEKING_SEQ')), '2021-04-3', '2021-04-25', 22, 4, 1);
+           (nextval('BOEKING_SEQ')), '2021-04-3', '2021-04-25', 22, 3, 1);
 
 insert into Boeking (
     ID, START_DATUM, EIND_DATUM, NUM_DAYS, NUM_GUESTS, APPARTEMENT_ID)
