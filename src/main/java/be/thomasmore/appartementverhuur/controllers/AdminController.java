@@ -1,9 +1,7 @@
 package be.thomasmore.appartementverhuur.controllers;
 
 import be.thomasmore.appartementverhuur.model.Appartement;
-import be.thomasmore.appartementverhuur.model.Boeking;
 import be.thomasmore.appartementverhuur.repositories.AppartementRepository;
-import be.thomasmore.appartementverhuur.repositories.BoekingRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +19,6 @@ public class AdminController {
     @Autowired
     private AppartementRepository appartementRepository;
 
-    @Autowired
-    private BoekingRepository boekingRepository;
 
     @ModelAttribute("appartement")
     public Appartement findAppartement(@PathVariable(required = false) Integer id) {
@@ -32,20 +28,12 @@ public class AdminController {
 
 
         Optional<Appartement> optionalAppartement = appartementRepository.findById(id);
-        if (optionalAppartement.isPresent())
-            return optionalAppartement.get();
-        return null;
+        return optionalAppartement.orElse(null);
     }
 
     @GetMapping("/appartementedit/{id}")
-    public String appartementEdit(Model model,
-                                  @PathVariable int id) {
+    public String appartementEdit(@PathVariable int id) {
 
-//        Optional<Appartement> optionalAppartement = appartementRepository.findById(id);
-//        if (optionalAppartement.isPresent()) {
-//            model.addAttribute("appartement", optionalAppartement.get());
-//
-//        }
 
         return "admin/appartementedit";
     }
@@ -76,8 +64,7 @@ public class AdminController {
     }
 
     @PostMapping("/appartementnew")
-    public String appartementNewPost(Model model,
-                                     @ModelAttribute("appartement") Appartement appartement) {
+    public String appartementNewPost(@ModelAttribute("appartement") Appartement appartement) {
 
         Appartement newAppartement = appartementRepository.save(appartement);
         return "redirect:/appartementdetails/" + newAppartement.getId();
@@ -87,33 +74,4 @@ public class AdminController {
 
 }
 
-//    @GetMapping("/appartementnew")
-//    public String newAppartement() {
-////        model.addAttribute("appartement", new Appartement());
-////        model.addAttribute("appartementen", appartementRepository.findAll());
-//        return "admin/appartementnew";
-
-//    }
-//    @PostMapping("/admin/appartementnew")
-//    public String newAppartementPost(Model model,
-//                                     @ModelAttribute("appartement") Appartement appartement){
-////        model.addAttribute("appartementen", appartementRepository.findAll());
-//        appartement.setAppartementNaam(appartement.getAppartementNaam());
-//        appartement.setCapacity(appartement.getCapacity());
-//        appartement.setStad(appartement.getStad());
-//        appartement.setIsParkingBeschikbaar(appartement.isParkingBeschikbaar());
-//        appartement.setAfstandTotCentrum(appartement.getAfstandTotCentrum());
-//        appartement.setExtraInfo(appartement.getExtraInfo());
-//        appartement.setAantalSlaapkamers(appartement.getAantalSlaapkamers());
-//        appartement.setOppervlakte(appartement.getOppervlakte());
-//        appartement.setHuisdierenToegelaten(appartement.isHuisdierenToegelaten());
-//        appartement.setPrijsPerMaand(appartement.getPrijsPerMaand());
-//        Appartement newAppartement= appartementRepository.save(appartement);
-//
-//
-//
-//
-//
-//        return "redirect:/appartementdetails/" + newAppartement.getId();
-//    }
 

@@ -14,9 +14,8 @@ import java.util.Optional;
 
 @Controller
 public class HomeController {
-    private Logger logger = LoggerFactory.getLogger(HomeController.class);
-    @Autowired
-    private UserRepository userRepository;
+    private final Logger logger = LoggerFactory.getLogger(HomeController.class);
+
 
 
     @GetMapping({"/", "/home"})
@@ -31,15 +30,10 @@ public class HomeController {
         return "home";
     }
     @GetMapping("/galerij")
-    public String galerij(Model model){
+    public String galerij(){
         return "galerij";
     }
 
-//   @GetMapping({"/appartementdetails","/appartementdetails/{appartementNaam}"})
-//    public String details(Model model,
-//                          @PathVariable(required = false) String appartementNaam){
-//        model.addAttribute("appartementNaam", (appartementNaam!=null) ? appartementNaam : "geen appartement gekozen");
-//        return "appartementdetails";
-//   }
+
 
 }

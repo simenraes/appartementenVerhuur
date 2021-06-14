@@ -25,7 +25,7 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-    private Logger logger = LoggerFactory.getLogger(UserController.class);
+    private final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Autowired
     UserRepository userRepository;
@@ -80,14 +80,16 @@ public class UserController {
             e.printStackTrace();
         }
     }
+
     @GetMapping("/login")
-    public String login(Model model,  Principal principal) {
-        if (principal!=null) return "redirect:/appartementenlijst";
+    public String login(Model model, Principal principal) {
+        if (principal != null) return "redirect:/home";
         return "user/login";
     }
+
     @GetMapping("/logout")
     public String logout(Model model, Principal principal) {
-        if (principal==null) return "redirect:/appartementenlijst";
+        if (principal == null) return "redirect:/home";
         return "user/logout";
     }
 }

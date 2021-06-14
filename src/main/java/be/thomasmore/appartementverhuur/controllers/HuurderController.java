@@ -16,7 +16,7 @@ import java.util.Optional;
 
 @Controller
 public class HuurderController {
-    private Logger logger = LoggerFactory.getLogger(HuurderController.class);
+    private final Logger logger = LoggerFactory.getLogger(HuurderController.class);
     @Autowired
     private HuurderRepository huurderRepository;
     @Autowired
