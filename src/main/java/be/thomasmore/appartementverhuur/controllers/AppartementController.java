@@ -52,8 +52,9 @@ public class AppartementController {
         Boolean huisdierenForJPQL = (filterHuisdieren == null || filterHuisdieren.equals("all")) ? null : filterHuisdieren.equals("yes");
         List<Appartement> appartementen = appartementRepository.findByFilter(minCapacity, maxCapacity, maxAfstandTotCentrum,
                 huisdierenForJPQL, keyword);
+        Iterable<Boeking> boekingen = boekingRepository.findAll();
 
-
+        model.addAttribute("boekingen", boekingen);
         model.addAttribute("appartementen", appartementen);
         model.addAttribute("nrOfAppartementen", appartementen.size());
 

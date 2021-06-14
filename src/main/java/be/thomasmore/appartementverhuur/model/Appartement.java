@@ -1,7 +1,6 @@
 package be.thomasmore.appartementverhuur.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Appartement {
@@ -18,14 +17,14 @@ public class Appartement {
     private int aantalSlaapkamers;
     private int oppervlakte;
     private boolean huisdierenToegelaten;
-    private int prijsPerMaand;
+    private int prijsPerWeek;
 
 
 
     public Appartement() {
     }
 
-    public Appartement(Integer id, int capacity, String appartementNaam, String stad, boolean isParkingBeschikbaar, int afstandTotCentrum, String extraInfo, int aantalSlaapkamers, int oppervlakte, boolean huisdierenToegelaten, int prijsPerMaand) {
+    public Appartement(Integer id, int capacity, String appartementNaam, String stad, boolean isParkingBeschikbaar, int afstandTotCentrum, String extraInfo, int aantalSlaapkamers, int oppervlakte, boolean huisdierenToegelaten, int prijsPerWeek) {
         this.id = id;
         this.capacity = capacity;
         this.appartementNaam = appartementNaam;
@@ -36,7 +35,7 @@ public class Appartement {
         this.aantalSlaapkamers = aantalSlaapkamers;
         this.oppervlakte = oppervlakte;
         this.huisdierenToegelaten = huisdierenToegelaten;
-        this.prijsPerMaand = prijsPerMaand;
+        this.prijsPerWeek = prijsPerWeek;
     }
 
     public Integer getId() {
@@ -103,12 +102,12 @@ public class Appartement {
         this.extraInfo = extraInfo;
     }
 
-    public int getPrijsPerMaand() {
-        return prijsPerMaand;
+    public int getPrijsPerWeek() {
+        return prijsPerWeek;
     }
 
-    public void setPrijsPerMaand(int prijsPerMaand) {
-        this.prijsPerMaand = prijsPerMaand;
+    public void setPrijsPerWeek(int prijsPerMaand) {
+        this.prijsPerWeek = prijsPerMaand;
     }
 
     public int getAantalSlaapkamers() {
