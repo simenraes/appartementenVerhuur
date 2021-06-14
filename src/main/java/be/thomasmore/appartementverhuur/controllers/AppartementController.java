@@ -95,7 +95,7 @@ public class AppartementController {
         model.addAttribute("minCapacity", minCapacity);
         model.addAttribute("maxCapacity", maxCapacity);
         model.addAttribute("maxAfstandTotCentrum", maxAfstandTotCentrum);
-        model.addAttribute("filterhuisdieren", filterHuisdieren);
+        model.addAttribute("filterHuisdieren", filterHuisdieren);
 //        model.addAttribute("keyword", keyword);
 
         return "appartementenlijst";

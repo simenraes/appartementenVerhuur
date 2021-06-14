@@ -19,9 +19,9 @@ public class Appartement {
     private int oppervlakte;
     private boolean huisdierenToegelaten;
     private int prijsPerMaand;
-    @OneToMany(mappedBy = "appartement", fetch = FetchType.LAZY)
-    private List<Boeking> boekingen;
-
+//    @OneToMany(mappedBy = "appartement", fetch = FetchType.LAZY)
+//    private List<Boeking> boekingen;
+//moet niet ?
 
 
     public Appartement() {
@@ -137,12 +137,6 @@ public class Appartement {
         this.huisdierenToegelaten = huisdierenToegelaten;
     }
 
-//    public List<Boeking> getBoekingen() {
-//        return boekingen;
-//    }
-//
-//    public void setBoekingen(List<Boeking> boekingen) {
-//        this.boekingen = boekingen;
-//    }
+
 }
 
