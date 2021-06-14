@@ -32,7 +32,6 @@ public class AppartementController {
     private HuurderRepository huurderRepository;
 
 
-
 //    public AppartementController(AppartementRepository appartementRepository) {
 //        this.appartementRepository = appartementRepository;
 //    }
@@ -53,7 +52,8 @@ public class AppartementController {
                                               @RequestParam(required = false) Integer minCapacity,
                                               @RequestParam(required = false) Integer maxCapacity,
                                               @RequestParam(required = false) Integer maxAfstandTotCentrum,
-                                              @RequestParam(required = false) String filterHuisdieren) {
+                                              @RequestParam(required = false) String filterHuisdieren,
+                                              @RequestParam(required = false) String keyword) {
 //        logger.info(String.format("appartementenlijstMetFilter -- min=%d, max=%d, maxAfstandTotCentrum=%d", minCapacity,
 //                maxCapacity, maxAfstandTotCentrum));
 //        Boolean huisdierentoegelatenJPQL =
@@ -64,9 +64,9 @@ public class AppartementController {
 //        List<Appartement> appartementen = appartementRepository.findByFilter(minCapacity, maxCapacity, maxAfstandTotCentrum,
 //                filterStringToBoolean(filterHuisdieren));
 
-        Boolean foodForJPQL = (filterHuisdieren == null || filterHuisdieren.equals("all")) ? null : filterHuisdieren.equals("yes");
+        Boolean huisdierenForJPQL = (filterHuisdieren == null || filterHuisdieren.equals("all")) ? null : filterHuisdieren.equals("yes");
         List<Appartement> appartementen = appartementRepository.findByFilter(minCapacity, maxCapacity, maxAfstandTotCentrum,
-                foodForJPQL);
+                huisdierenForJPQL, keyword);
 //        List<Appartement> appartementen= appartementRepository.findByCapacityGreaterThanEqual(minCapacity);
 //        List<Appartement> appartementen= appartementRepository.findByFilter(minCapacity, maxCapacity);
 //
@@ -96,7 +96,7 @@ public class AppartementController {
         model.addAttribute("maxCapacity", maxCapacity);
         model.addAttribute("maxAfstandTotCentrum", maxAfstandTotCentrum);
         model.addAttribute("filterHuisdieren", filterHuisdieren);
-//        model.addAttribute("keyword", keyword);
+        model.addAttribute("keyword", keyword);
 
         return "appartementenlijst";
 

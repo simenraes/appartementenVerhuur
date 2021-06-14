@@ -21,15 +21,18 @@ public interface AppartementRepository extends CrudRepository<Appartement, Integ
     List<Appartement> findByStadContainingIgnoreCase(String keyword);
 
     Optional<Appartement> findById(Integer id);
+
     @Query("SELECT a FROM Appartement a WHERE " +
             "(:min IS NULL OR :min <= a.capacity) AND " +
             "(:max IS NULL OR a.capacity <= :max) AND " +
             "(:maxAfstandTotCentrum IS NULL OR a.afstandTotCentrum <= :maxAfstandTotCentrum) AND " +
-            "(:huisdierenToegelaten IS NULL OR a.huisdierenToegelaten = :huisdierenToegelaten)")
+            "(:huisdierenToegelaten IS NULL OR a.huisdierenToegelaten = :huisdierenToegelaten) AND " +
+            "(:stad IS NULL OR UPPER(a.stad) LIKE UPPER(CONCAT('%', :stad, '%')))")
     List<Appartement> findByFilter(@Param("min") Integer min,
                                    @Param("max") Integer max,
                                    @Param("maxAfstandTotCentrum") Integer maxAfstandTotCentrum,
-                                   @Param("huisdierenToegelaten") Boolean huisdierenToegelaten);
+                                   @Param("huisdierenToegelaten") Boolean huisdierenToegelaten,
+                                   @Param("stad") String stad);
 
 
 //    Iterable<Appartement> findByHuisdierenToegelaten(boolean huisdierenToegelaten);
