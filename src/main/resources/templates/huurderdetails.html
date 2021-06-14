@@ -1,0 +1,51 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!--suppress XmlUnusedNamespaceDeclaration -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+
+    <title>Huurderdetails</title>
+</head>
+<body>
+<div class="details">
+
+    <div class="detailscontent" th:if="${huurder}">
+
+        <div class="prevAppButton">
+            <a class="buttonLook smallButton" th:href="@{|/huurderdetails/${prevId}|}">&lt;</a>
+        </div>
+        <div class="nextAppButton">
+            <a class="buttonLook smallButton" th:href="@{|/huurderdetails/${nextId}|}">&gt;</a>
+        </div>
+
+        <h1 class="h1AppNaam" th:text="|huurder: ${huurder.naam}|">huurderdetails</h1>
+
+        <div class="appartementinfo">
+            <div class="appartementDetailsTekst">
+                <div class="grootheid">geslacht:</div>
+                <div class="eenheid">
+                    <a th:text="${huurder.geslacht}" class="linkLook" target="_blank">
+                        info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="boekingenVanAppartement"  th:if="${huurder}">
+        <div class="boekingenVanAppartementcontent">
+            <h2  th:text="|boekingen van  ${huurder.naam}|">boekingen van huurder</h2>
+
+            <div class="boekingPerAppartement">
+                <div th:each="boeking:${huurder.boekingen}">
+                    <a class="gevondenAppartementButton" th:href="@{|/boekingdetails/${boeking.id}|}">
+                        <span th:text="|${boeking.startDatum} - ${boeking.eindDatum}|">startdatum</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
