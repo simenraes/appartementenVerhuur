@@ -16,7 +16,7 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-    private Logger logger = LoggerFactory.getLogger(AdminController.class);
+    private final Logger logger = LoggerFactory.getLogger(AdminController.class);
 
     @Autowired
     private AppartementRepository appartementRepository;
