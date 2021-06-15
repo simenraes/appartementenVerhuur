@@ -17,16 +17,10 @@
 .filterNumber input[type="number" i]{
     width: 2em;
 }
-/*.filterCapacity{*/
-/*    width: 2em;*/
-/*}*/
-/*.submitButton{*/
-/*    text-decoration: none;*/
-/*    color: white;*/
-/*}*/
+
 * {
     margin: 0;
-    padding: 0;
+    /*padding: 0;*/
     font-family: "Century Gothic", sans-serif;
     font-size: large;
 }

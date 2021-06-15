@@ -74,8 +74,8 @@
             </div>
         </div>
     </div>
-    <div class="editButton">
-        <a th:href="@{/boekingnew}" class="buttonLook smallButton">boek dit appartement</a>
+    <div sec:authorize="hasAuthority('USER')" class="editButton">
+        <a sec:authorize="hasAuthority('USER')"  th:href="@{/boekingnew}" class="buttonLook smallButton">boek dit appartement</a>
     </div>
     <div class="row1content" th:unless="${appartement}">
         <p>geen appartement gekozen</p>
