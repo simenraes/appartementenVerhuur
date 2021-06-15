@@ -29,6 +29,10 @@ public class Boeking {
     private Integer numDays = 1;
     @Min(value = 1)
     private Integer numGuests = 1;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Huurder huurder;
+
+
 
 
 
