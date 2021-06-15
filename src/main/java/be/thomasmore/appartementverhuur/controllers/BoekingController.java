@@ -2,8 +2,10 @@ package be.thomasmore.appartementverhuur.controllers;
 
 import be.thomasmore.appartementverhuur.model.Appartement;
 import be.thomasmore.appartementverhuur.model.Boeking;
+import be.thomasmore.appartementverhuur.model.Huurder;
 import be.thomasmore.appartementverhuur.repositories.AppartementRepository;
 import be.thomasmore.appartementverhuur.repositories.BoekingRepository;
+import be.thomasmore.appartementverhuur.repositories.HuurderRepository;
 import org.hibernate.validator.constraints.br.TituloEleitoral;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +26,8 @@ public class BoekingController {
     private AppartementRepository appartementRepository;
     @Autowired
     private BoekingRepository boekingRepository;
+    @Autowired
+    private HuurderRepository huurderRepository;
 
     //    @GetMapping("/boekingen")
 //    public String boekingenLijst(Model model){
@@ -52,14 +56,19 @@ public class BoekingController {
         if (id == null) return "boekingdetails";
         Optional<Boeking> optionalBoeking = boekingRepository.findById(id);
         Iterable<Appartement> appartementen = appartementRepository.findAll();
+
         if (optionalBoeking.isPresent()) {
+            Optional<Huurder> optionalHuurder = huurderRepository.findByBoekingen(optionalBoeking);
             long nrOfBoekingen = boekingRepository.count();
             model.addAttribute("boeking", (optionalBoeking.get()));
 //            model.addAttribute("prevId", id > 1 ? id - 1 : nrOfBoekingen);
 //            model.addAttribute("nextId", id < nrOfBoekingen ? id + 1 : 1);
             model.addAttribute("appartementen", appartementen);
+            if (optionalHuurder.isPresent()) {
+                model.addAttribute("huurder", optionalHuurder.get());
 
 
+            }
         }
 
 //        Iterable<Appartement> appartementen = appartementRepository.findAll();

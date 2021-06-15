@@ -9,6 +9,7 @@ import java.util.Optional;
 
 public interface HuurderRepository extends CrudRepository <Huurder, Integer> {
     Optional<Huurder> findByUserUsername(String username);
-    Iterable<Huurder> findByBoekingen(Boeking boeking);
+//    Iterable<Huurder> findByBoekingen(Boeking boeking);
+    Optional<Huurder> findByBoekingen(Optional<Boeking> boeking);
 
 }

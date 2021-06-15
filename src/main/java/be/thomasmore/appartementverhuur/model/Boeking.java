@@ -29,6 +29,8 @@ public class Boeking {
     private Integer numDays = 1;
     @Min(value = 1)
     private Integer numGuests = 1;
+    @ManyToOne( fetch = FetchType.LAZY)
+    private Huurder huurder;
 
 
 
@@ -37,7 +39,7 @@ public class Boeking {
     public Boeking() {
     }
 
-    public Boeking(Integer id, Date startDatum, Date eindDatum, Appartement appartement, Integer numDays, Integer numGuests) {
+    public Boeking(Integer id, Date startDatum, Date eindDatum, Appartement appartement, Integer numDays, Integer numGuests, Huurder huurder) {
         this.id = id;
         this.startDatum = startDatum;
         this.eindDatum = eindDatum;
@@ -45,6 +47,7 @@ public class Boeking {
         this.numDays = numDays;
         this.numGuests = numGuests;
 
+        this.huurder = huurder;
     }
 
     public Integer getId() {
@@ -95,5 +98,11 @@ public class Boeking {
         this.numGuests = numGuests;
     }
 
+    public Huurder getHuurder() {
+        return huurder;
+    }
 
+    public void setHuurder(Huurder huurder) {
+        this.huurder = huurder;
+    }
 }
