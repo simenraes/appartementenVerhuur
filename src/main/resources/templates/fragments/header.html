@@ -26,8 +26,10 @@
                     <li><a sec:authorize="isAuthenticated()" th:href="@{|/user/logout|}"
                         class="nav-button">logout</a></li>
                     <li><a sec:authorize="!isAuthenticated()" th:href="@{/user/login}"
-                        class="buttonLook menuButton authButton">login</a></li>
+                        class="nav-button">login</a></li>
                     <li><a class="nav-button" th:href="@{/galerij}">galerij</a></li>
+                    <li><a class="nav-button" sec:authorize="hasAuthority('ADMIN')" th:href="@{|/huurderdetails/1|}"
+                           >huurders</a></li>
 
 
                 </ul>
