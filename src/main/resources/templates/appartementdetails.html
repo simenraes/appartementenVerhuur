@@ -26,10 +26,8 @@
 
         <div class="appartementinfo">
             <div class="appartementDetailsTekst">
-                <div class="grootheid">info:</div>
-                <div class="eenheid">
-                    <a th:text="${appartement.extraInfo}" class="linkLook" target="_blank">
-                        info</a>
+                <div class="grootheid">Appartement Id:</div>
+                <div class="eenheid" th:text="${appartement.id}">appId
                 </div>
             </div>
 
@@ -74,8 +72,9 @@
             </div>
         </div>
     </div>
-    <div class="editButton">
-        <a th:href="@{/boekingnew}" class="buttonLook smallButton">boek dit appartement</a>
+    <div sec:authorize="hasAuthority('USER')"   class="editButton">
+        <a sec:authorize="hasAuthority('USER')"  th:href="@{/boekingnew}" class="buttonLook smallButton">boek dit
+            appartement</a>
     </div>
     <div class="row1content" th:unless="${appartement}">
         <p>geen appartement gekozen</p>
@@ -83,14 +82,13 @@
 
 </div>
 <div sec:authorize="hasAuthority('ADMIN')" class="editButton">
-    <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/appartementedit/${appartement.id}|}" >editapp</a>
+    <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/appartementedit/${appartement.id}|}">editapp</a>
 </div>
 
 
-
-<div class="boekingenVanAppartement"  th:if="${appartement}">
+<div class="boekingenVanAppartement" th:if="${appartement}">
     <div class="boekingenVanAppartementcontent">
-        <h2  th:text="|boekingen van  ${appartement.appartementNaam}|">boekingen van dit appartement</h2>
+        <h2 th:text="|boekingen van  ${appartement.appartementNaam}|">boekingen van dit appartement</h2>
 
         <div class="boekingPerAppartement">
             <div th:each="boeking:${boekingen}">
@@ -101,9 +99,6 @@
         </div>
     </div>
 </div>
-
-
-
 
 
 </body>

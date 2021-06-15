@@ -39,8 +39,8 @@ insert into USER (ID, USERNAME, PASSWORD, EMAIL, ROLE)
 values ((nextval('USER_SEQ')), 'stijn', '$2a$10$9MIX8kYPkuB7uE/H5nHF8.KG6.YdjBA/voOnjSZnZDxLXL/2BIerS',
         'stijn@hotmail.be', 'USER');
 
-insert into HUURDER (ID, NAAM, GESLACHT, USER_ID)
-values ((nextval('HUURDER_SEQ')), 'stino', 'man', 3);
+insert into HUURDER (ID, NAAM, GESLACHT, USER_ID, TELEFOON_NUMMER)
+values ((nextval('HUURDER_SEQ')), 'stino', 'man', 3, '04 78 32 85 41');
 
 insert into USER (
     ID, USERNAME, PASSWORD,EMAIL, ROLE)
@@ -48,8 +48,8 @@ values (
     (nextval('USER_SEQ')), 'bob', '$2a$10$pQnldtWyD5CpMBjWJycMW.jmEOY2zKqjSkCo5V2vKqvW44ORrdpAa', 'bob@hotmail' ||
     '.be', 'USER');
 
-insert into HUURDER (ID, NAAM, GESLACHT, USER_ID)
-values ((nextval('HUURDER_SEQ')), 'bobi', 'man', 4);
+insert into HUURDER (ID, NAAM, GESLACHT, USER_ID, TELEFOON_NUMMER)
+values ((nextval('HUURDER_SEQ')), 'bobi', 'man', 4, '04 85 69 24 35');
 
 
 INSERT INTO HUURDER_BOEKINGEN(HUURDER_ID, BOEKINGEN_ID) values (1,1);

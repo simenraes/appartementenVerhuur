@@ -27,16 +27,20 @@
         <div class="appartementinfo">
             <div class="appartementDetailsTekst">
                 <div class="grootheid">geslacht:</div>
-                <div class="eenheid">
-                    <a th:text="${huurder.geslacht}" class="linkLook" target="_blank">
-                        info</a>
+                <div class="eenheid" th:text="${huurder.geslacht}">
+
+
+                </div>
+                <div class="grootheid">telefoonr:</div>
+                <div class="eenheid" th:text="${huurder.telefoonNummer}">
+
                 </div>
             </div>
         </div>
     </div>
-    <div class="boekingenVanAppartement"  th:if="${huurder}">
+    <div class="boekingenVanAppartement" th:if="${huurder}">
         <div class="boekingenVanAppartementcontent">
-            <h2  th:text="|boekingen van  ${huurder.naam}|">boekingen van huurder</h2>
+            <h2 th:text="|boekingen van  ${huurder.naam}|">boekingen van huurder</h2>
 
             <div class="boekingPerAppartement">
                 <div th:each="boeking:${huurder.boekingen}">
