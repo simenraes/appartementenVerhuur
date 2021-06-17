@@ -5,9 +5,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="static/css/style.css"/>
 
-    <title>Title</title>
+    <title>Appartementedit</title>
 </head>
 <body>
 <form th:action="@{|/admin/appartementedit/${appartement.id}|}" th:object="${appartement}" method="post">

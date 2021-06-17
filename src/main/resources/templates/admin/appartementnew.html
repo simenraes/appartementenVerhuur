@@ -4,65 +4,63 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../admin/static/css/style.css"/>
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="static/css/style.css"/>
+    <title>Appartementnew</title>
 </head>
 <body>
-<div class="row1">
-    <div class="row1content" th:object="${appartement}">
+<div class="newAppartement">
+    <div class="appartementDetailsTekst" th:object="${appartement}">
         <h2>nieuw appartement</h2>
-        <form  th:action="@{|/admin/appartementnew|}" method="post"  >
-            <div class="venueinfo">
-                <div class="infoLine">
-                   <label for="appartementNaam" class="infoLineName">naam: </label>
-                    <input id="appartementNaam" th:field="*{appartementNaam}" class="infoLineValue">
-              </div>
-               <div class="infoLine">
-                   <label for="capacity" class="infoLineName">capaciteit: </label>
-                   <input id="capacity" th:field="*{capacity}" class="infoLineValue">
-               </div>
-               <div class="infoLine">
-                   <label for="stad" class="infoLineName">stad: </label>
-                   <input id="stad" th:field="*{stad}" class="infoLineValue">
+        <form th:action="@{|/admin/appartementnew|}" method="post">
+            <div class="appartementinfo">
+                <div>
+                    <label for="appartementNaam" class="grootheid">naam: </label>
+                    <input id="appartementNaam" th:field="*{appartementNaam}" class="eenheid">
                 </div>
-               <div class="infoLine">
-                   <label for="isParkingBeschikbaar" class="infoLineName">parking beschikbaar? </label>
-                   <input id="isParkingBeschikbaar" th:field="*{isParkingBeschikbaar}" class="infoLineValue">
+                <div>
+                    <label for="capacity" class="grootheid">capaciteit: </label>
+                    <input id="capacity" th:field="*{capacity}" class="eenheid">
                 </div>
-               <div class="infoLine">
-                    <label for="afstandTotCentrum" class="infoLineName">afstand to centrum: </label>
-                    <input id="afstandTotCentrum" th:field="*{afstandTotCentrum}" class="infoLineValue">
+                <div>
+                    <label for="stad" class="grootheid">stad: </label>
+                    <input id="stad" th:field="*{stad}" class="eenheid">
                 </div>
-                <div class="infoLine">
-                    <label for="extraInfo" class="infoLineName">extra info: </label>
-                    <input id="extraInfo" th:field="*{extraInfo}" class="infoLineValue">
+                <div>
+                    <label for="isParkingBeschikbaar" class="grootheid">parking beschikbaar? </label>
+                    <input id="isParkingBeschikbaar" th:field="*{isParkingBeschikbaar}" class="eenheid">
                 </div>
-                <div class="infoLine">
-                    <label for="aantalSlaapkamers" class="infoLineName">aantal slaapkamers: </label>
-                    <input id="aantalSlaapkamers" th:field="*{aantalSlaapkamers}" class="infoLineValue">
+                <div>
+                    <label for="afstandTotCentrum" class="grootheid">afstand to centrum: </label>
+                    <input id="afstandTotCentrum" th:field="*{afstandTotCentrum}" class="eenheid">
                 </div>
-                <div class="infoLine">
-                    <label for="oppervlakte" class="infoLineName">opp: </label>
-                    <input id="oppervlakte" th:field="*{oppervlakte}" class="infoLineValue">
+                <div>
+                    <label for="extraInfo" class="grootheid">extra info: </label>
+                    <input id="extraInfo" th:field="*{extraInfo}" class="eenheid">
                 </div>
-                <div class="infoLine">
-                    <label for="huisdierenToegelaten" class="infoLineName">huisdieren toegelaten? </label>
-                    <input id="huisdierenToegelaten" th:field="*{huisdierenToegelaten}" class="infoLineValue">
+                <div>
+                    <label for="aantalSlaapkamers" class="grootheid">aantal slaapkamers: </label>
+                    <input id="aantalSlaapkamers" th:field="*{aantalSlaapkamers}" class="eenheid">
                 </div>
-                <div class="infoLine">
-                    <label for="prijsPerMaand" class="infoLineName">prijs: </label>
-                    <input id="prijsPerMaand" th:field="*{prijsPerMaand}" class="infoLineValue">
+                <div>
+                    <label for="oppervlakte" class="grootheid">opp: </label>
+                    <input id="oppervlakte" th:field="*{oppervlakte}" class="eenheid">
                 </div>
-                <div class="infoLine">
-                    <a th:href="@{|/appartementenlijst|}" class="buttonLook editButton">cancel</a>
-                    <input type="submit" value="create" class="buttonLook editButton">
+                <div>
+                    <label for="huisdierenToegelaten" class="grootheid">huisdieren toegelaten? </label>
+                    <input id="huisdierenToegelaten" th:field="*{huisdierenToegelaten}" class="eenheid">
+                </div>
+                <div>
+                    <label for="prijsPerMaand" class="grootheid">prijs: </label>
+                    <input id="prijsPerMaand" th:field="*{prijsPerMaand}" class="eenheid">
+                </div>
+                <div>
+                    <a th:href="@{|/appartementenlijst|}" class="cancelButton">cancel</a>
+                    <input type="submit" value="create" class="editButton">
                 </div>
             </div>
-            </form>
+        </form>
     </div>
 </div>
-
-
 
 
 </body>
