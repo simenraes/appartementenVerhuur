@@ -320,4 +320,39 @@ form.loginForm1 {
     margin-top: 4px;
 
 }
+.textOfErrorPage{
+    padding-top: 100px;
+}
+
+.ErrorPage1steLijn{
+    font-size: 100px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.ErrorPage2deLijn{
+    font-size: 80px;
+}
+.carousel-item {
+    height: 100vh;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.btn {
+    position: absolute;
+    margin-left: 600px;
+    display: inline-block;
+    padding-left: 10px;
+
+
+
+}
+.homeBoet{
+    position: fixed;
+    margin-left: 500px;
+
+}
 
