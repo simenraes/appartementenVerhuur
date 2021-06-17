@@ -3,8 +3,6 @@ package be.thomasmore.appartementverhuur.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
@@ -24,10 +22,7 @@ public class Boeking {
     private Date eindDatum;
     @ManyToOne(fetch = FetchType.LAZY)
     private Appartement appartement;
-    @Min(value = 1)
-    @Max(value = 366)
     private Integer numDays = 1;
-    @Min(value = 1)
     private Integer numGuests = 1;
 
 

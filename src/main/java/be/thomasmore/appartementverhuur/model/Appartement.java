@@ -1,7 +1,6 @@
 package be.thomasmore.appartementverhuur.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Appartement {
@@ -19,9 +18,6 @@ public class Appartement {
     private int oppervlakte;
     private boolean huisdierenToegelaten;
     private int prijsPerMaand;
-//    @OneToMany(mappedBy = "appartement", fetch = FetchType.LAZY)
-//    private List<Boeking> boekingen;
-//moet niet ?
 
 
     public Appartement() {

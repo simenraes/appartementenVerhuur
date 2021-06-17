@@ -18,9 +18,6 @@ public class Huurder {
     private Collection<Boeking> boekingen;
 
 
-
-
-
     public Huurder() {
     }
 
