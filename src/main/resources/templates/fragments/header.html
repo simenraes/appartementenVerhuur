@@ -6,30 +6,30 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../../static/css/style.css"/>
 
-    <title>Title</title>
+    <title>header</title>
 </head>
 <body>
 <header>
     <div th:fragment="header">
-        <div class="text-center mb-5 mt-5 font-weight-bold">
+        <div>
             <p class="TitleHome">appartementenverhuur</p>
         </div>
         <div class="nav">
             <div sec:authentication="name" sec:authorize="isAuthenticated()" class="hello">welkom</div>
 
 
-            <div class="navbar-dark">
+            <div>
                 <ul>
                     <li class="active"><a class="nav-button" th:href="@{/}">home</a></li>
                     <li><a class="nav-button" th:href="@{/appartementenlijst}">appartementen</a></li>
                     <li><a class="nav-button" th:href="@{/boekingen}">boekingen</a></li>
                     <li><a sec:authorize="isAuthenticated()" th:href="@{|/user/logout|}"
-                        class="nav-button">logout</a></li>
+                           class="nav-button">logout</a></li>
                     <li><a sec:authorize="!isAuthenticated()" th:href="@{/user/login}"
-                        class="nav-button">login</a></li>
+                           class="nav-button">login</a></li>
                     <li><a class="nav-button" th:href="@{/galerij}">galerij</a></li>
                     <li><a class="nav-button" sec:authorize="hasAuthority('ADMIN')" th:href="@{|/huurderdetails/1|}"
-                           >huurders</a></li>
+                    >huurders</a></li>
 
 
                 </ul>
