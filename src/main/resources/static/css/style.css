@@ -117,11 +117,7 @@ body {
     text-align: center;
 }
 
-.infoLineName {
-    font-weight: bolder;
-    margin-bottom: 5px;
-    font-size: large;
-}
+
 
 .detailscontent {
     text-align: center;
@@ -191,6 +187,7 @@ body {
     text-align: center;
     margin-top: 50px;
     margin-left: 370px;
+    border: green;
 }
 
 .h2Boekingen {
