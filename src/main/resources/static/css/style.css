@@ -6,6 +6,7 @@
     margin-bottom: 30px;
     color: white;
 }
+
 .filterButton {
     background-color: #002752;
     text-decoration: none;
@@ -14,52 +15,50 @@
     color: white;
     margin-bottom: 10px;
 }
-.filterNumber input[type="number" i]{
+
+.filterNumber input[type="number" i] {
     width: 2em;
 }
-/*.filterCapacity{*/
-/*    width: 2em;*/
-/*}*/
-/*.submitButton{*/
-/*    text-decoration: none;*/
-/*    color: white;*/
-/*}*/
+
 * {
     margin: 0;
     padding: 0;
     font-family: "Century Gothic", sans-serif;
     font-size: large;
 }
-/*header{*/
-/*    background-image: url("/img/appartement.jpg") ;*/
-/*    height: 100vh;*/
-/*}*/
+
 .row1 img {
     width: 100%;
     /*height: auto;*/
     position: relative;
 }
+
 ul li {
     display: inline-block;
 }
+
 ul li a {
-    /*color: white;*/
+
     padding: 5px 20px;
     border: 1px solid white;
     margin-bottom: 5px;
 }
+
 ul li a:hover {
     background-color: black;
 }
-.aantalAppartementen{
+
+.aantalAppartementen {
     text-align: center;
     font-size: xx-large;
     margin-top: 20px;
 }
-.gevondenAppartementen{
+
+.gevondenAppartementen {
     text-align: center;
 }
-.gevondenAppartementButton{
+
+.gevondenAppartementButton {
     display: block;
     margin: 10px auto;
     width: 400px;
@@ -68,65 +67,77 @@ ul li a:hover {
     background-color: #002752;
     border-radius: 70%;
 }
-.gevondenAppartementButton:hover{
+
+.gevondenAppartementButton:hover {
     background-color: cornflowerblue;
 }
-.appartementDetailsTekst{
+
+.appartementDetailsTekst {
     /*display: flex;*/
     margin: 10px;
     text-align: center;
 }
-.appartementinfo{
+
+.appartementinfo {
     text-align: center;
     margin-top: 50px;
 }
-/*ul li.active a {*/
-/*    background-color: black;*/
-/*}*/
+
 header {
     background-color: cornflowerblue;
     padding-bottom: 5px;
 }
+
 a {
     text-decoration: none;
     font-weight: bold;
     color: white;
 }
+
 .footer {
     background-color: cornflowerblue;
     margin: 0;
     padding-top: 5px;
 }
+
 .footerText {
     text-align: center;
     color: white;
 }
+
 body {
     margin: 0;
 }
+
 .htmlHomePage {
     background-color: cornflowerblue;
 }
+
 .details {
     text-align: center;
 }
-.infoLineName{
+
+.infoLineName {
     font-weight: bolder;
     margin-bottom: 5px;
     font-size: large;
 }
+
 .detailscontent {
     text-align: center;
     margin-bottom: 50px;
 }
-.prevAppButton{
-    float:left;
+
+.prevAppButton {
+    float: left;
     margin-top: 250px;
 }
-.nextAppButton{
+
+.nextAppButton {
     float: right;
     margin-top: 250px;
 }
+
 .editButton {
     font-size: 1.2em;
     padding: 1.2em;
@@ -137,7 +148,8 @@ body {
     display: inline-block;
     margin-bottom: 50px;
 }
-.cancelButton{
+
+.cancelButton {
     font-size: 1.2em;
     padding: 1.2em;
     background-color: red;
@@ -147,23 +159,25 @@ body {
     display: inline-block;
     margin-bottom: 200px;
 }
-.cancelButton:hover{
+
+.cancelButton:hover {
     background-color: firebrick;
 }
-.editButton:hover{
+
+.editButton:hover {
     background-color: #4c6c5d;
 }
-/*.appartementinfo {*/
-/*    float: left;*/
-/*}*/
+
 .boekingenVanAppartement {
     text-align: center;
 }
+
 body {
     background-color: lightgray;
     color: black;
     margin: 0;
 }
+
 .overlay {
     position: absolute;
     top: 0;
@@ -171,51 +185,60 @@ body {
     padding: 30px;
     margin: 0 30px;
 }
+
 /*TABLE CSS*/
-.boekingTabel{
+.boekingTabel {
     text-align: center;
     margin-top: 50px;
     margin-left: 370px;
 }
-.h2Boekingen{
+
+.h2Boekingen {
     text-align: center;
 
 }
-.logButton{
+
+.logButton {
     position: absolute;
     color: #c69500;
 }
-.hello{
+
+.hello {
 
     float: right;
-   font-size: x-large;
+    font-size: x-large;
     color: white;
     margin-right: 10px;
 }
-.LoginlogoutBody{
+
+.LoginlogoutBody {
     font-family: "Roboto Light", sans-serif;
     width: 100%;
-    background: url("/img/app1.png");
     text-align: center;
 }
-.h1AppNaam{
+
+.h1AppNaam {
     font-size: xxx-large;
 }
-.grootheid{
+
+.grootheid {
     font-weight: bolder;
     margin-bottom: 5px;
 
     color: black;
     font-size: x-large;
 }
-.eenheid{
+
+.eenheid {
     color: darkorange;
     font-weight: bold;
 }
-.h1Boekingen{
+
+.h1Boekingen {
     font-size: xxx-large;
     text-align: center;
 }
+
 /*LOGIN CSS FINAL*/
 .loginBody {
     background-color: lightgray;
@@ -306,7 +329,8 @@ form.loginForm1 {
 .h2Login {
     text-align: center;
 }
-.submitRegistreer{
+
+.submitRegistreer {
     cursor: pointer;
     border-radius: 5em;
     color: #fff;
@@ -320,19 +344,21 @@ form.loginForm1 {
     margin-top: 4px;
 
 }
-.textOfErrorPage{
+
+.textOfErrorPage {
     padding-top: 100px;
 }
 
-.ErrorPage1steLijn{
+.ErrorPage1steLijn {
     font-size: 100px;
     padding-top: 50px;
     padding-bottom: 40px;
 }
 
-.ErrorPage2deLijn{
+.ErrorPage2deLijn {
     font-size: 80px;
 }
+
 .carousel-item {
     height: 100vh;
     background: no-repeat center center scroll;
@@ -341,6 +367,7 @@ form.loginForm1 {
     -o-background-size: cover;
     background-size: cover;
 }
+
 .btn {
     position: absolute;
     margin-left: 600px;
@@ -348,11 +375,12 @@ form.loginForm1 {
     padding-left: 10px;
 
 
-
 }
-.homeBoet{
+
+.homeBoet {
     position: fixed;
     margin-left: 500px;
 
 }
+
 
