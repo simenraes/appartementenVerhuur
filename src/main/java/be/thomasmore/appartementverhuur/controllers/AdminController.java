@@ -20,7 +20,6 @@ public class AdminController {
     private AppartementRepository appartementRepository;
 
 
-
     @ModelAttribute("appartement")
     public Appartement findAppartement(@PathVariable(required = false) Integer id) {
         //Spring roept eerst de @ModelAttribute functie (findParty) op. Die functie heeft een PathVariable id. Spring gebruikt hiervoor dezelfde parameter als in de  Request Handler. Maar de Request Handler partyNew heeft geen PathVariable.
