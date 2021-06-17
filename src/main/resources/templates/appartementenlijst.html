@@ -58,6 +58,22 @@
                         <input type="radio" id="huisdierenToegelaten_all" name="filterHuisdieren" value="all"
                                th:checked="${filterHuisdieren=='all'}">
                     </div>
+                    <h3>parking</h3>
+                    <div class="filterNumber">
+                        <label for="parking_yes">yes</label>
+                        <input type="radio" id="parking_yes" name="filterParking" value="yes"
+                               th:checked="${filterParking=='yes'}">
+                    </div>
+                    <div class="filterNumber">
+                        <label for="parking_no">no</label>
+                        <input type="radio" id="parking_no" name="filterParking" value="no"
+                               th:checked="${filterParking=='no'}">
+                    </div>
+                    <div class="filterNumber">
+                        <label for="parking_all" class="huisdierenToegelaten_all">all</label>
+                        <input type="radio" id="parking_all" name="filterParking" value="all"
+                               th:checked="${filterParking=='all'}">
+                    </div>
                     <h3>stad</h3>
                     <div class="filterNumber">
                         <label for="keyword" class="filtername"></label>

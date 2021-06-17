@@ -44,12 +44,16 @@ public class AppartementController {
                                               @RequestParam(required = false) Integer maxCapacity,
                                               @RequestParam(required = false) Integer maxAfstandTotCentrum,
                                               @RequestParam(required = false) String filterHuisdieren,
+                                              @RequestParam(required = false) String filterParking,
                                               @RequestParam(required = false) String keyword) {
 
 
         Boolean huisdierenForJPQL = (filterHuisdieren == null || filterHuisdieren.equals("all")) ? null : filterHuisdieren.equals("yes");
+        Boolean parkingForJPQL = (filterParking == null || filterParking.equals("all")) ? null :
+                filterParking.equals("yes");
+
         List<Appartement> appartementen = appartementRepository.findByFilter(minCapacity, maxCapacity, maxAfstandTotCentrum,
-                huisdierenForJPQL, keyword);
+                huisdierenForJPQL, parkingForJPQL, keyword);
 
         model.addAttribute("appartementen", appartementen);
         model.addAttribute("nrOfAppartementen", appartementen.size());
@@ -59,6 +63,7 @@ public class AppartementController {
         model.addAttribute("maxCapacity", maxCapacity);
         model.addAttribute("maxAfstandTotCentrum", maxAfstandTotCentrum);
         model.addAttribute("filterHuisdieren", filterHuisdieren);
+        model.addAttribute("filterParking", filterParking);
         model.addAttribute("keyword", keyword);
 
         return "appartementenlijst";

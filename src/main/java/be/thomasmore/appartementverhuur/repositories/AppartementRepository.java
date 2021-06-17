@@ -17,11 +17,13 @@ public interface AppartementRepository extends CrudRepository<Appartement, Integ
             "(:max IS NULL OR a.capacity <= :max) AND " +
             "(:maxAfstandTotCentrum IS NULL OR a.afstandTotCentrum <= :maxAfstandTotCentrum) AND " +
             "(:huisdierenToegelaten IS NULL OR a.huisdierenToegelaten = :huisdierenToegelaten) AND " +
+            "(:isParkingBeschikbaar is null or a.isParkingBeschikbaar= :isParkingBeschikbaar) AND" +
             "(:stad IS NULL OR UPPER(a.stad) LIKE UPPER(CONCAT('%', :stad, '%')))")
     List<Appartement> findByFilter(@Param("min") Integer min,
                                    @Param("max") Integer max,
                                    @Param("maxAfstandTotCentrum") Integer maxAfstandTotCentrum,
                                    @Param("huisdierenToegelaten") Boolean huisdierenToegelaten,
+                                   @Param("isParkingBeschikbaar") Boolean isParkingBeschikbaar,
                                    @Param("stad") String stad);
 
 
