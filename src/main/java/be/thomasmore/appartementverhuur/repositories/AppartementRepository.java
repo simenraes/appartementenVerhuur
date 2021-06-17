@@ -10,16 +10,6 @@ import java.util.Optional;
 
 public interface AppartementRepository extends CrudRepository<Appartement, Integer> {
 
-    //List<Appartement>  findByCapacityGreaterThanEqual(@Param("minCapacity")Integer minCapacity);
-    List<Appartement> findAllBy();
-
-    //List<Appartement> findByCapacityGreaterThanEqual(Integer minCapacity);
-    List<Appartement> findByCapacityGreaterThan(int minCapacity);
-
-//    List<Appartement> findByCapacityBetween(int minCapacity, int maxCapacity);
-
-    List<Appartement> findByStadContainingIgnoreCase(String keyword);
-
     Optional<Appartement> findById(Integer id);
 
     @Query("SELECT a FROM Appartement a WHERE " +
@@ -35,8 +25,4 @@ public interface AppartementRepository extends CrudRepository<Appartement, Integ
                                    @Param("stad") String stad);
 
 
-//    Iterable<Appartement> findByHuisdierenToegelaten(boolean huisdierenToegelaten);
-
-//    List<Appartement> findByFilter(@Param("minCapacity") Integer minCapacity,
-//                                   @Param("maxCapacity") Integer maxCapacity);
 }

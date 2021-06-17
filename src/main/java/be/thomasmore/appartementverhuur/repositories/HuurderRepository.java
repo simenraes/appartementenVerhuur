@@ -7,8 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface HuurderRepository extends CrudRepository <Huurder, Integer> {
-    Optional<Huurder> findByUserUsername(String username);
-    Iterable<Huurder> findByBoekingen(Boeking boeking);
+public interface HuurderRepository extends CrudRepository<Huurder, Integer> {
+
 
 }
