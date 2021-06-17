@@ -8,5 +8,4 @@ public interface BoekingRepository extends CrudRepository <Boeking, Integer> {
 Iterable<Boeking> findByAppartement(Appartement appartement);
 
 
-
 }

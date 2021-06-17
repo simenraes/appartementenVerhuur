@@ -24,11 +24,4 @@ public class HomeController {
 
         return "home";
     }
-
-    @GetMapping("/galerij")
-    public String galerij() {
-        return "galerij";
-    }
-
-
 }

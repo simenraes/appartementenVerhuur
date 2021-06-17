@@ -98,6 +98,7 @@ a {
     background-color: cornflowerblue;
     margin: 0;
     padding-top: 5px;
+    height: auto;
 }
 
 .footerText {
@@ -118,7 +119,6 @@ body {
 }
 
 
-
 .detailscontent {
     text-align: center;
     margin-bottom: 50px;
@@ -132,6 +132,7 @@ body {
 .nextAppButton {
     float: right;
     margin-top: 250px;
+
 }
 
 .editButton {
@@ -202,7 +203,7 @@ body {
 
 .hello {
 
-    float: right;
+    float: right; !important;
     font-size: x-large;
     color: white;
     margin-right: 10px;
@@ -378,6 +379,49 @@ form.loginForm1 {
     position: fixed;
     margin-left: 500px;
 
+}
+
+.carousel-container {
+    height: 890px;
+    width: 1583px;
+}
+
+.nav {
+    text-decoration: none;
+}
+
+.carousel-item {
+    height: 100vh;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.btn {
+    position: absolute;
+    margin-left: 600px;
+    display: inline-block;
+    padding-left: 10px;
+
+
+}
+
+.homeBoet {
+
+    margin-left: 700px;
+
+}
+
+
+.carousel-container {
+    height: auto;
+}
+
+.homeBody {
+    background-color: cornflowerblue;
+    line-height: 1;
 }
 
 

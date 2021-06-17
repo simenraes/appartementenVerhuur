@@ -14,8 +14,9 @@
         <div>
             <p class="TitleHome">appartementenverhuur</p>
         </div>
+        <div sec:authentication="name" sec:authorize="isAuthenticated()" class="hello">welkom</div>
+
         <div class="nav">
-            <div sec:authentication="name" sec:authorize="isAuthenticated()" class="hello">welkom</div>
 
 
             <div>
@@ -27,7 +28,6 @@
                            class="nav-button">logout</a></li>
                     <li><a sec:authorize="!isAuthenticated()" th:href="@{/user/login}"
                            class="nav-button">login</a></li>
-                    <li><a class="nav-button" th:href="@{/galerij}">galerij</a></li>
                     <li><a class="nav-button" sec:authorize="hasAuthority('ADMIN')" th:href="@{|/huurderdetails/1|}"
                     >huurders</a></li>
 

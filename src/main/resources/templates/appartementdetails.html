@@ -15,16 +15,17 @@
 
     <div class="detailscontent" th:if="${appartement}">
 
-        <div class="prevAppButton">
-            <a class="buttonLook smallButton" th:href="@{|/appartementdetails/${prevId}|}">&lt;</a>
-        </div>
-        <div class="nextAppButton">
-            <a class="buttonLook smallButton" th:href="@{|/appartementdetails/${nextId}|}">&gt;</a>
-        </div>
+
 
         <h1 class="h1AppNaam" th:text="|appartement: ${appartement.appartementNaam}|">appartementdetails</h1>
 
         <div class="appartementinfo">
+            <div class="prevAppButton">
+                <a th:href="@{|/appartementdetails/${prevId}|}">vorige</a>
+            </div>
+            <div class="nextAppButton">
+                <a th:href="@{|/appartementdetails/${nextId}|}">volgende</a>
+            </div>
             <div class="appartementDetailsTekst">
                 <div class="grootheid">Appartement Id:</div>
                 <div class="eenheid" th:text="${appartement.id}">appId
