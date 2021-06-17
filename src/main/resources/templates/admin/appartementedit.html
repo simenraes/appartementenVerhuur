@@ -14,32 +14,54 @@
 
 
     <div class="appartementinfo">
-        <div class="infoLine">
-            <label for="appartementNaam" class="infoLineName">naam: </label>
+        <div>
+            <label for="appartementNaam" class="grootheid">naam: </label>
             <input id="appartementNaam" th:field="*{appartementNaam}" th:value="${appartement.appartementNaam}"
-                   class="infoLineValue">
+                   class="eenheid">
         </div>
     </div>
     <div class="appartementinfo">
-        <div class="infoLine">
-            <label for="extraInfo" class="infoLineName">extra info: </label>
+        <div>
+            <label for="extraInfo" class="grootheid">extra info: </label>
             <input id="extraInfo" th:field="*{extraInfo}" th:value="${appartement.extraInfo}"
-                   class="infoLineValue">
+                   class="eenheid">
         </div>
     </div>
     <div class="appartementinfo">
-        <div class="infoLine">
-            <label for="capacity" class="infoLineName">capaciteit: </label>
-            <input id="capacity" th:field="*{capacity}" class="infoLineValue">
+        <div>
+            <label for="capacity" class="grootheid">capaciteit: </label>
+            <input id="capacity" th:field="*{capacity}" class="eenheid">
         </div>
     </div>
     <div class="appartementinfo">
-        <div class="infoLine">
-            <label for="parkingBeschikbaar" class="infoLineName">parking beschikbaar ? </label>
+        <div>
+            <label for="parkingBeschikbaar" class="grootheid">parking beschikbaar ? </label>
             <input id="parkingBeschikbaar" th:field="*{parkingBeschikbaar}"
-                   class="infoLineValue">
+                   class="eenheid">
         </div>
     </div>
+    <div class="appartementinfo">
+        <div>
+            <label for="afstandTotCentrum" class="grootheid">afstand tot centrum(km): </label>
+            <input id="afstandTotCentrum" th:field="*{afstandTotCentrum}"
+                   class="eenheid">
+        </div>
+    </div>
+    <div class="appartementinfo">
+        <div>
+            <label for="aantalSlaapkamers" class="grootheid">aantal slaapkamers: </label>
+            <input id="aantalSlaapkamers" th:field="*{aantalSlaapkamers}"
+                   class="eenheid">
+        </div>
+    </div>
+    <div class="appartementinfo">
+        <div>
+            <label for="oppervlakte" class="grootheid">oppervlakte: </label>
+            <input id="oppervlakte" th:field="*{oppervlakte}"
+                   class="eenheid">
+        </div>
+    </div>
+
     <div class="appartementinfo">
         <a th:href="@{|/appartementdetails/${appartement.id}|}" class="cancelButton">cancel</a>
         <input type="submit" value="save" class=" editButton">
