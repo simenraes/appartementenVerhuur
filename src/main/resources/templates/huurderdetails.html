@@ -15,16 +15,16 @@
 
     <div class="detailscontent" th:if="${huurder}">
 
-        <div class="prevAppButton">
-            <a class="buttonLook smallButton" th:href="@{|/huurderdetails/${prevId}|}">&lt;</a>
-        </div>
-        <div class="nextAppButton">
-            <a class="buttonLook smallButton" th:href="@{|/huurderdetails/${nextId}|}">&gt;</a>
-        </div>
 
         <h1 class="h1AppNaam" th:text="|huurder: ${huurder.naam}|">huurderdetails</h1>
 
         <div class="appartementinfo">
+            <div class="prevAppButton">
+                <a class="buttonLook smallButton" th:href="@{|/huurderdetails/${prevId}|}">vorige</a>
+            </div>
+            <div class="nextAppButton">
+                <a class="buttonLook smallButton" th:href="@{|/huurderdetails/${nextId}|}">volgende</a>
+            </div>
             <div class="appartementDetailsTekst">
                 <div class="grootheid">geslacht:</div>
                 <div class="eenheid" th:text="${huurder.geslacht}">
@@ -35,7 +35,10 @@
                 <div class="eenheid" th:text="${huurder.telefoonNummer}">
 
                 </div>
+
             </div>
+
+
         </div>
     </div>
     <div class="boekingenVanAppartement" th:if="${huurder}">
