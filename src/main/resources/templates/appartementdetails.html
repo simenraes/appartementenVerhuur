@@ -76,7 +76,7 @@
         <a sec:authorize="hasAuthority('USER')"  th:href="@{/boekingnew}" class="buttonLook smallButton">boek dit
             appartement</a>
     </div>
-    <div class="row1content" th:unless="${appartement}">
+    <div th:unless="${appartement}">
         <p>geen appartement gekozen</p>
     </div>
 

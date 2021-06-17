@@ -13,57 +13,59 @@
 <div th:replace="fragments/header :: header">Header</div>
 <div class="appartementenlijst">
     <div class="appartementenlijstInhoud">
-        <div class="row1">
-            <div class="aantalAppartementen" th:text="|${nrOfAppartementen} appartementen gevonden|">20 appartementen</div>
+        <div>
+            <div class="aantalAppartementen" th:text="|${nrOfAppartementen} appartementen gevonden|">20 appartementen
+            </div>
             <div th:unless="${showFilters}" class="filters">
                 <a class="filterButton" th:href="@{/appartementenlijst/filter}">zoek op filter</a>
             </div>
             <div th:if="${showFilters}" class="filters">
-                <a class="filterButton" th:href="@{/appartementenlijst}">-</a>
+                <a th:href="@{/appartementenlijst}">-</a>
 
                 <form>
-                    <div class="submitButton">
-                        <input type="submit" value="zoek" class="buttonLook filterButton">
-                    </div>
+
                     <h3>capaciteit</h3>
                     <div class="filterNumber">
-                        <label for="minCapacity" class="filtername"> min</label>
+                        <label for="minCapacity"> min</label>
                         <input type="number" id="minCapacity" name="minCapacity" th:value="${minCapacity}" value="0"
                                step="1"> personen
                     </div>
                     <div class="filterNumber">
-                        <label for="maxCapacity" class="filtername">max</label>
+                        <label for="maxCapacity">max</label>
                         <input type="number" id="maxCapacity" name="maxCapacity" th:value="${maxCapacity}" value="0"
                                step="1"> personen
                     </div>
                     <h3>afstand tot centrum</h3>
                     <div class="filterNumber">
-                        <label for="maxAfstandTotCentrum" class="filtername">max</label>
-                        <input type="number" id="maxAfstandTotCentrum" name="maxAfstandTotCentrum" th:value="${maxAfstandTotCentrum}" value="0"
+                        <label for="maxAfstandTotCentrum">max</label>
+                        <input type="number" id="maxAfstandTotCentrum" name="maxAfstandTotCentrum"
+                               th:value="${maxAfstandTotCentrum}" value="0"
                                step="1"> km tot het centrum
                     </div>
                     <h3>huisdieren</h3>
-                    <div class="onefilter">
-                        <label for="huisdierenToegelaten_yes" class="filtername">yes</label>
+                    <div class="filterNumber">
+                        <label for="huisdierenToegelaten_yes">yes</label>
                         <input type="radio" id="huisdierenToegelaten_yes" name="filterHuisdieren" value="yes"
                                th:checked="${filterHuisdieren=='yes'}">
                     </div>
-                    <div class="onefilter">
-                        <label for="huisdierenToegelaten_no" class="filtername">no</label>
+                    <div class="filterNumber">
+                        <label for="huisdierenToegelaten_no">no</label>
                         <input type="radio" id="huisdierenToegelaten_no" name="filterHuisdieren" value="no"
                                th:checked="${filterHuisdieren=='no'}">
                     </div>
-                    <div class="onefilter">
+                    <div class="filterNumber">
                         <label for="huisdierenToegelaten_all" class="huisdierenToegelaten_all">all</label>
                         <input type="radio" id="huisdierenToegelaten_all" name="filterHuisdieren" value="all"
                                th:checked="${filterHuisdieren=='all'}">
                     </div>
-                    <h3>keyword</h3>
-                    <div class="onefilter">
+                    <h3>stad</h3>
+                    <div class="filterNumber">
                         <label for="keyword" class="filtername"></label>
                         <input type="text" id="keyword" name="keyword" th:value="${keyword}" value="0">
                     </div>
-
+                    <div class="submitButton">
+                        <input type="submit" value="zoek">
+                    </div>
                 </form>
             </div>
             <div class="gevondenAppartementen">
@@ -71,7 +73,7 @@
                     <a class="gevondenAppartementButton"
                        th:href="@{|/appartementdetails/${appartement.id}|}">
                         <span th:text="${appartement.appartementNaam}">appartement naam</span>
-                        <div th:text="|max ${appartement.capacity} personen|" class="venueExtraInfo">maxNrOfPersons</div>
+                        <div th:text="|max ${appartement.capacity} personen|">maxNrOfPersons</div>
                         <div th:text="|stad ${appartement.stad}| "></div>
                     </a>
 
@@ -80,11 +82,9 @@
         </div>
     </div>
 </div>
-<div sec:authorize="hasAuthority('ADMIN')"  class="editButton">
-    <a sec:authorize="hasAuthority('ADMIN')"  th:href="@{|/admin/appartementnew|}" >newApp</a>
+<div sec:authorize="hasAuthority('ADMIN')" class="editButton">
+    <a sec:authorize="hasAuthority('ADMIN')" th:href="@{|/admin/appartementnew|}">newApp</a>
 </div>
-
-
 
 
 </body>
